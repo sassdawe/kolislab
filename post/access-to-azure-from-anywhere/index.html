@@ -1,0 +1,224 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=content-language content="en">
+<meta name=color-scheme content="light dark">
+<meta name=author content="David Sass">
+<meta name=description content="! Warning !     The content of this post might not be aligned with you company&rsquo;s internal IT security rules, I suggest to talk to your manager and request an approval before you try this out in any of your environments.
+ Introduction, setting the stage    We should start with an overall picture of an imaginary Enterprise network
+Imagine that your ADFS is sitting behind the corporate firewall and your users cannot access it from the Internet without VPN.">
+<meta name=keywords content="blog,developer,architect,sassdawe">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Red Team type of Access to Azure from Anywhere">
+<meta name=twitter:description content="! Warning !     The content of this post might not be aligned with you company&rsquo;s internal IT security rules, I suggest to talk to your manager and request an approval before you try this out in any of your environments.
+ Introduction, setting the stage    We should start with an overall picture of an imaginary Enterprise network
+Imagine that your ADFS is sitting behind the corporate firewall and your users cannot access it from the Internet without VPN.">
+<meta property="og:title" content="Red Team type of Access to Azure from Anywhere">
+<meta property="og:description" content="! Warning !     The content of this post might not be aligned with you company&rsquo;s internal IT security rules, I suggest to talk to your manager and request an approval before you try this out in any of your environments.
+ Introduction, setting the stage    We should start with an overall picture of an imaginary Enterprise network
+Imagine that your ADFS is sitting behind the corporate firewall and your users cannot access it from the Internet without VPN.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://kolislab.com/post/access-to-azure-from-anywhere/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2019-02-12T06:00:00+00:00">
+<meta property="article:modified_time" content="2019-02-12T06:00:00+00:00">
+<title>
+Red Team type of Access to Azure from Anywhere · kolislab
+</title>
+<link rel=canonical href=http://kolislab.com/post/access-to-azure-from-anywhere/>
+<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
+<link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen>
+<link rel=stylesheet href=/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin=anonymous media=screen>
+<link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16>
+<link rel=apple-touch-icon href=/images/apple-touch-icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png>
+<meta name=generator content="Hugo 0.92.1">
+</head>
+<body class="preload-transitions colorscheme-auto">
+<div class=float-container>
+<a id=dark-mode-toggle class=colorscheme-toggle>
+<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</div>
+<main class=wrapper>
+<nav class=navigation>
+<section class=container>
+<a class=navigation-title href=/>
+kolislab
+</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle>
+<i class="fa fa-bars fa-fw" aria-hidden=true></i>
+</label>
+<ul class=navigation-list>
+<li class=navigation-item>
+<a class=navigation-link href=/post/>Blog</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=/about/>About</a>
+</li>
+</ul>
+</section>
+</nav>
+<div class=content>
+<section class="container page">
+<article>
+<header>
+<h1 class=title>
+<a class=title-link href=http://kolislab.com/post/access-to-azure-from-anywhere/>
+Red Team type of Access to Azure from Anywhere
+</a>
+</h1>
+</header>
+<h2 id=-warning->
+! Warning !
+<a class=heading-link href=#-warning->
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<blockquote>
+<p><strong>The content of this post might not be aligned with you company&rsquo;s internal IT security rules, I suggest to talk to your manager and request an approval before you try this out in any of your environments.</strong></p>
+</blockquote>
+<h2 id=introduction-setting-the-stage>
+Introduction, setting the stage
+<a class=heading-link href=#introduction-setting-the-stage>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p><em>We should start with an overall picture of an imaginary Enterprise network</em></p>
+<p><strong>Imagine that your ADFS is sitting behind the corporate firewall and your users cannot access it from the Internet without VPN.</strong></p>
+<p>Now continue.. <strong>Imagine that your company is using Office 365</strong> (or Microsoft 365) <strong>with Federated Authentication which requires access to that ADFS server which is not accessible from anywhere except your company network.</strong></p>
+<p>Just to keep things interested.. <strong>Imagine that your users have to use Smart Cards to logon into their workstations</strong> and this gives you Multi-factor Authentication.</p>
+<p>Finally just to color the picture.. <strong>Imagine that you&rsquo;re using Azure AD Privileged ID Management (PIM) from Privileged Admin Workstations.</strong> But the regular user base has access to different Azure subscriptions running different part of your Corporate environment in the Cloud.</p>
+<p>I&rsquo;d say that we created a pretty good situation here from the security standpoint and a quite common one from the usage standpoint.</p>
+<h2 id=innovation-happens>
+Innovation happens
+<a class=heading-link href=#innovation-happens>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p><em>In this section I&rsquo;m trying to give you a picture about Microsoft&rsquo;s innovation</em></p>
+<p>In the past, before 2016 (give or take), our options to access and administer Azure were the <a href=https://portal.azure.com>Portal</a>, the Azure PowerShell module and Visual Studio. But slowly Microsoft is releasing new tools to help us with our jobs.</p>
+<p>Today we can use Azure App on our mobile devices, the <strong>Azure Cloud Shell</strong> in our browsers to create and manage resources and we can use the <strong>Azure CLI</strong> as well - which is a cross platform command line interface - running on most of the Operating Systems.</p>
+<p>With these new tools we have new ways to do and automate our jobs and these tools use newer technologies under their hood.</p>
+<h2 id=new-technologies>
+New technologies
+<a class=heading-link href=#new-technologies>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>One of these new technology is part of oAuth which helps with Authentication.</p>
+<h3 id=authentication-with-azure-cloud-shell>
+Authentication with Azure Cloud Shell
+<a class=heading-link href=#authentication-with-azure-cloud-shell>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h3>
+<p>When you open the Azure Cloud Shell it uses your browser&rsquo;s session to authenticate you seamlessly, you just have to wait a couple of seconds and you can start using it</p>
+<p><img src=/content/images/2019/02/azure-cloud-shell.png-1.jpg alt=azure-cloud-shell.png-1></p>
+<p>The Azure Cloud Shell in the background is an Ubuntu Linux virtual machine running in Azure and it comes with the Azure CLI pre-installed as you can see it in the picture above.</p>
+<h3 id=authentication-with-azure-cli>
+Authentication with Azure CLI
+<a class=heading-link href=#authentication-with-azure-cli>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h3>
+<p>We have a couple of options authenticating with the Azure CLI and because of the SSO we can skip the the authentication in the browser.</p>
+<p><img src=/content/images/2019/02/az-login-h.jpg alt=az-login-h></p>
+<p>But from Azure CLI running on your machine you&rsquo;ve to authenticate somehow, which is easy because using the <code>az login</code> command your browser will open where you can sign-in.</p>
+<p><img src=/content/images/2019/02/az-login.jpg alt=az-login></p>
+<p>But if you&rsquo;re on a device without a browser or you want to connect to a different subscription from Azure Cloud Shell you need to use device code flow option:
+<code>az login --use-device-code</code></p>
+<h3 id=device-code-flow>
+Device Code Flow
+<a class=heading-link href=#device-code-flow>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h3>
+<p>On devices where the interactive login process isn&rsquo;t available the Device Code Flow lets you authenticate using a different machine and providing a generated code from the console session.</p>
+<p>In the below picture try to imagine that the PowerShell console is running on a different machine where the only option to authenticate is the Device Code Flow.</p>
+<figure><img src=/images/2019/02/az-login-device-code.jpg>
+</figure>
+<h2 id=where-are-we-going-with-this>
+Where are we going with this?
+<a class=heading-link href=#where-are-we-going-with-this>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>I hope you&rsquo;re still here, because this is the point where this post is starting to be interesting - at least for me.</p>
+<p>In our situation that we all imagined a couple of minutes ago&mldr; We&rsquo;d a stong dependenicy on our corporate network because we needed to use our ADFS service to authenticate, right? Right.</p>
+<blockquote>
+<p><em>Did you realize that the Azure Cloud Shell is actually not running on your company network?</em></p>
+</blockquote>
+<p>That&rsquo;s right. You&rsquo;re entry point is the browser running on your machine and exposing your browser&rsquo;s session to Azure Cloud Shell. Realizing this took me some time, so it&rsquo;s completly OK to learn this just now!</p>
+<p><strong>The question: Can we use Azure CLI from the anywhere on internet to access our Azure resources, including Azure AD?</strong></p>
+<p><strong>Yes, we can!</strong> <em>Reminder, this is the point where you need to talk to your manager before you do something which isn&rsquo;t allowed by your company.</em></p>
+<h2 id=exposures>
+Exposures
+<a class=heading-link href=#exposures>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<h3 id=general-exposure>
+General Exposure
+<a class=heading-link href=#general-exposure>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h3>
+<p>When you&rsquo;re using the Azure CLI you&rsquo;ll have the same level of access to all resources in Azure what you&rsquo;d have using the Azure portal from your machine connected to the company network.</p>
+<blockquote>
+<p>If you&rsquo;ve owner level of access to a subscription you&rsquo;ll have owner level of access and you can do anything with that subscription.</p>
+</blockquote>
+<p>In case you&rsquo;re allowed to use the Azure CLI from the Internet you&rsquo;ve to make sure your threat model is ready to deal with this situation.</p>
+<h3 id=attack-vector-i>
+Attack vector I.
+<a class=heading-link href=#attack-vector-i>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h3>
+<p>A different exposure or we can say attack vector is when someone creates a rouge Azure CLI version and starts distributing it, and with this malicious version when you initiate a connection, the Rouge CLI could connect to a C&C server and initiate a rouge connection from that C&C machine and give back the device code your Rouge CLI to show you. So when you&rsquo;re authenticating in your browser you&rsquo;re actually letting the C&C server in into your Azure Subscriptions with your access level.</p>
+<h3 id=attack-vector-ii>
+Attack vector II.
+<a class=heading-link href=#attack-vector-ii>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h3>
+<p>The Azure CLI is caching the session token in your file system using encryption. If an attacker can extract your session token and decrypt it then you&rsquo;ll be having a really bad day.</p>
+<h2 id=mitigation>
+Mitigation
+<a class=heading-link href=#mitigation>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>So far I didn&rsquo;t find anything. I&rsquo;m not sure if we can prevent the usage of the Azure CLI and even if we can prevent it then we&rsquo;d probably mess some things up with the Azure Cloud Shell as well.
+<em>If I learn anything useful in the future I&rsquo;ll update this post.</em></p>
+<h2 id=the-whole-process>
+The whole process
+<a class=heading-link href=#the-whole-process>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>You&rsquo;ll need at least two machines with Internet connection, one of them has to be located on the company network so you could access you ADFS server.</p>
+<ol>
+<li>On the remote machine use the Azure CLI and the Device Code Flow to initiate a login process <code>az login --use-device-code</code> this will generate the required code.</li>
+<li>On the company network connected machine open <a href=https://microsoft.com/devicelogin>https://microsoft.com/devicelogin</a> and enter the code from the remote machine to authenticate.</li>
+<li>On the remote machine the you&rsquo;ll gain access the Azure.</li>
+</ol>
+</article>
+</section>
+</div>
+<footer class=footer>
+<section class=container>
+©
+2019 -
+2022
+David Sass
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
+</section>
+</footer>
+</main>
+<script src=/js/coder.min.39a51230dce2ac866c049b52573e38bf60666af4bc63c1bdf203b9b2d95b1cd6.js integrity="sha256-OaUSMNzirIZsBJtSVz44v2BmavS8Y8G98gO5stlbHNY="></script>
+</body>
+</html>

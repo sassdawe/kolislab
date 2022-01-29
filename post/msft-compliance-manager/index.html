@@ -1,0 +1,156 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=content-language content="en">
+<meta name=color-scheme content="light dark">
+<meta name=author content="David Sass">
+<meta name=description content="As you probably know Microsoft has a Service Trust Portal from where you can get the #Compliance related information for all Microsoft cloud cervices.
+You can even download the Security and Compliance Blueprints
+ Compliance Manager    One of the most helpful offering of the Service Trust Portal is the Compliance Manager, a workflow-based risk assessment tool in which you can get a good overview of your Compliance score which will reflect on how Microsoft understood the different regulations/certifications and the controls required to meet the requirements of these.">
+<meta name=keywords content="blog,developer,architect,sassdawe">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Microsoft Azure Compliance Manager">
+<meta name=twitter:description content="As you probably know Microsoft has a Service Trust Portal from where you can get the #Compliance related information for all Microsoft cloud cervices.
+You can even download the Security and Compliance Blueprints
+ Compliance Manager    One of the most helpful offering of the Service Trust Portal is the Compliance Manager, a workflow-based risk assessment tool in which you can get a good overview of your Compliance score which will reflect on how Microsoft understood the different regulations/certifications and the controls required to meet the requirements of these.">
+<meta property="og:title" content="Microsoft Azure Compliance Manager">
+<meta property="og:description" content="As you probably know Microsoft has a Service Trust Portal from where you can get the #Compliance related information for all Microsoft cloud cervices.
+You can even download the Security and Compliance Blueprints
+ Compliance Manager    One of the most helpful offering of the Service Trust Portal is the Compliance Manager, a workflow-based risk assessment tool in which you can get a good overview of your Compliance score which will reflect on how Microsoft understood the different regulations/certifications and the controls required to meet the requirements of these.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://kolislab.com/post/msft-compliance-manager/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2019-02-03T22:24:52+00:00">
+<meta property="article:modified_time" content="2019-02-03T22:24:52+00:00">
+<title>
+Microsoft Azure Compliance Manager · kolislab
+</title>
+<link rel=canonical href=http://kolislab.com/post/msft-compliance-manager/>
+<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
+<link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen>
+<link rel=stylesheet href=/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin=anonymous media=screen>
+<link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16>
+<link rel=apple-touch-icon href=/images/apple-touch-icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png>
+<meta name=generator content="Hugo 0.92.1">
+</head>
+<body class="preload-transitions colorscheme-auto">
+<div class=float-container>
+<a id=dark-mode-toggle class=colorscheme-toggle>
+<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</div>
+<main class=wrapper>
+<nav class=navigation>
+<section class=container>
+<a class=navigation-title href=/>
+kolislab
+</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle>
+<i class="fa fa-bars fa-fw" aria-hidden=true></i>
+</label>
+<ul class=navigation-list>
+<li class=navigation-item>
+<a class=navigation-link href=/post/>Blog</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=/about/>About</a>
+</li>
+</ul>
+</section>
+</nav>
+<div class=content>
+<section class="container page">
+<article>
+<header>
+<h1 class=title>
+<a class=title-link href=http://kolislab.com/post/msft-compliance-manager/>
+Microsoft Azure Compliance Manager
+</a>
+</h1>
+</header>
+<p>As you probably know <strong>Microsoft</strong> has a <strong><a href=https://servicetrust.microsoft.com/ViewPage/HomePage>Service Trust Portal</a></strong> from where you can get the <strong>#Compliance</strong> related information for all Microsoft cloud cervices.</p>
+<p>You can even download the <a href=https://servicetrust.microsoft.com/ViewPage/BlueprintOverview>Security and Compliance Blueprints</a></p>
+<figure><img src=/images/2019/02/blueprints.png-1.jpg>
+</figure>
+<h2 id=compliance-manager>
+Compliance Manager
+<a class=heading-link href=#compliance-manager>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>One of the most helpful offering of the Service Trust Portal is the <strong>Compliance Manager</strong>, a workflow-based risk assessment tool in which you can get a good overview of your Compliance score which will reflect on how Microsoft understood the different regulations/certifications and the controls required to meet the requirements of these.</p>
+<p>You can find more information in the <a href=https://docs.microsoft.com/en-us/office365/securitycompliance/meet-data-protection-and-regulatory-reqs-using-microsoft-cloud>official documentation</a>, like <em>48+ minutes to read</em> more information.</p>
+<p>As you can see on the bellow picture there are built in assessments in which there are controls managed by Microsoft and controls which are your responsibility as the customer:</p>
+<figure><img src=/images/2019/02/azure-compliance.jpg alt="Compliance Manager Dashboard"><figcaption>
+<p>Compliance Manager Dashboard</p>
+</figcaption>
+</figure>
+<h2 id=how-to-use-the-compliance-manager>
+How to use the Compliance Manager
+<a class=heading-link href=#how-to-use-the-compliance-manager>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>Because Compliance Manager is a Risk Assessment tool, you can work with the existing assessments and you can create new ones as well. The permission model of the portal offers different roles to manage who can access the portal and what actions they can perform:</p>
+<figure><img src=/images/2019/02/compliance-manager-rbac-1.jpg alt="Role Based Access Control of a Compliance Manager Portal"><figcaption>
+<p>Role Based Access Control of a Compliance Manager Portal</p>
+</figcaption>
+</figure>
+<p>Now lets take a closer look into one of the built in assessments.</p>
+<h2 id=azure---gdpr>
+Azure - GDPR
+<a class=heading-link href=#azure---gdpr>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>This is the overview of the Azure - GDPR assessment. On picture you can see the services included. I highlighted those I&rsquo;m using or used in the past</p>
+<figure><img src=/images/2019/02/Azure-GDPR-1.jpg alt="Details of Azure GDPR Assessment"><figcaption>
+<p>Details of Azure GDPR Assessment</p>
+</figcaption>
+</figure>
+<p>When you open down the Customer Managed controls there are a couple of categories in which you can find the individual controls grouped together</p>
+<figure><img src=/images/2019/02/Azure-GDPR-control-categories-1.jpg alt="List of Customer Managed Controls"><figcaption>
+<p>List of Customer Managed Controls</p>
+</figcaption>
+</figure>
+<p>I&rsquo;m going to open one of them from the <em>Data protection by design and by default</em> category to show the details, this one is called <em>Transmission controls</em></p>
+<p>As you can see there are a couple of interesting sections here:</p>
+<ul>
+<li>The details of the matching articles from GDPR</li>
+<li>Customer actions, written with simple English which is my personal favorite part</li>
+<li>Options to assign the control to a responsible person and manage the lifecycle</li>
+<li>Text boxes to put the implementation details of the control</li>
+</ul>
+<figure><img src=/images/2019/02/Azure-GDPR-TransmissionControl.png-1.jpg alt="Transmission control"><figcaption>
+<p>Transmission control</p>
+</figcaption>
+</figure>
+<h2 id=conclusion>
+Conclusion
+<a class=heading-link href=#conclusion>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p><em>I&rsquo;m not a certified compliance officer that&rsquo;s true, but I think I can try to provide a summary As-Is, and I suggest to consult with a lawyer before you make any implementation decisions</em></p>
+<p>The GDPR Assessment related to Azure is an overall assessment. I believe if you start implementing different application hosted on Azure you&rsquo;ll need to create new assessments for each and every one of those applications and it doesn&rsquo;t matter if they&rsquo;re in-house developed apps or a 3rd party Vendor&rsquo;s cloud based offering. If you get an audit you&rsquo;ll need to provide the evidence of the <em>paperwork</em> you did to comply with the regulations.
+I suggest to use the Compliance Manager as a single location to store all you&rsquo;re risk assessments especially if they&rsquo;re related to the Microsoft Cloud.</p>
+</article>
+</section>
+</div>
+<footer class=footer>
+<section class=container>
+©
+2019 -
+2022
+David Sass
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
+</section>
+</footer>
+</main>
+<script src=/js/coder.min.39a51230dce2ac866c049b52573e38bf60666af4bc63c1bdf203b9b2d95b1cd6.js integrity="sha256-OaUSMNzirIZsBJtSVz44v2BmavS8Y8G98gO5stlbHNY="></script>
+</body>
+</html>

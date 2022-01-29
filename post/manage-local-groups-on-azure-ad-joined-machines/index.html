@@ -1,0 +1,134 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=content-language content="en">
+<meta name=color-scheme content="light dark">
+<meta name=author content="David Sass">
+<meta name=description content="Get-VM : You do not have the required permission to complete this task. Let&rsquo;s fix that using Add-LocalGroupMember on our Azure AD joined device.">
+<meta name=keywords content="blog,developer,architect,sassdawe">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="How to manage Hyper-V Administrators on Azure AD joined machines">
+<meta name=twitter:description content="Get-VM : You do not have the required permission to complete this task. Let&rsquo;s fix that using Add-LocalGroupMember on our Azure AD joined device.">
+<meta property="og:title" content="How to manage Hyper-V Administrators on Azure AD joined machines">
+<meta property="og:description" content="Get-VM : You do not have the required permission to complete this task. Let&rsquo;s fix that using Add-LocalGroupMember on our Azure AD joined device.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://kolislab.com/post/manage-local-groups-on-azure-ad-joined-machines/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2020-05-02T10:29:20+00:00">
+<meta property="article:modified_time" content="2020-05-02T10:29:20+00:00">
+<title>
+How to manage Hyper-V Administrators on Azure AD joined machines · kolislab
+</title>
+<link rel=canonical href=http://kolislab.com/post/manage-local-groups-on-azure-ad-joined-machines/>
+<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
+<link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen>
+<link rel=stylesheet href=/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin=anonymous media=screen>
+<link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16>
+<link rel=apple-touch-icon href=/images/apple-touch-icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png>
+<meta name=generator content="Hugo 0.92.1">
+</head>
+<body class="preload-transitions colorscheme-auto">
+<div class=float-container>
+<a id=dark-mode-toggle class=colorscheme-toggle>
+<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</div>
+<main class=wrapper>
+<nav class=navigation>
+<section class=container>
+<a class=navigation-title href=/>
+kolislab
+</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle>
+<i class="fa fa-bars fa-fw" aria-hidden=true></i>
+</label>
+<ul class=navigation-list>
+<li class=navigation-item>
+<a class=navigation-link href=/post/>Blog</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=/about/>About</a>
+</li>
+</ul>
+</section>
+</nav>
+<div class=content>
+<section class="container page">
+<article>
+<header>
+<h1 class=title>
+<a class=title-link href=http://kolislab.com/post/manage-local-groups-on-azure-ad-joined-machines/>
+How to manage Hyper-V Administrators on Azure AD joined machines
+</a>
+</h1>
+</header>
+<p>Today&rsquo;s blog post we&rsquo;ll have a look at the use case where we&rsquo;ve an <strong>Azure AD</strong> joined Windows 10 device with the <strong>Hyper-V</strong> role installed, and we don&rsquo;t want to bother elevating our PowerShell console every time to manage our virtual machines. Or to put it more bluntly get rid of this error message:</p>
+<figure><img src=/images/2020/05/image.png alt="Get-VM : You do not have the required permission to complete this task. Contact the administrator of the authorization policy for the computer"><figcaption>
+<p>Get-VM : You do not have the required permission to complete this task. Contact the administrator of the authorization policy for the computer</p>
+</figcaption>
+</figure>
+<p>To allow our user account to run the Hyper-V cmdlets, we must add the account to the <strong>Hyper-V Administrators</strong> local group. That&rsquo;s it, sound simple right?</p>
+<h2 id=our-challenge>
+Our Challenge
+<a class=heading-link href=#our-challenge>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>Given that our Windows 10 machine is joined into Azure AD, our user account is not visible in Windows, we cannot just simply add the account to the Hyper-V Administrator group using the Computer Management administrative console. Let me show it to you.</p>
+<p>First, we check our username using the good old WHOAMI command. The result in my case is <code>azuread\sassdavid</code></p>
+<figure><img src=/images/2020/05/image-1.png alt="running WHOAMI inside CMD"><figcaption>
+<p>running WHOAMI inside CMD</p>
+</figcaption>
+</figure>
+<p>Second, we try adding this user to the correct local group.</p>
+<p>We can use the <strong>Win+X</strong> keyboard shortcut and select <strong>Computer Management</strong> from the list of menu options. In Computer Management, select System Tools > Local Users and Groups > Groups to open the list of local groups. Right click on <strong>Hyper-V Administrators</strong> and select Properties. Hit <strong>Add</strong> and search for your username. When I searched for mine by clicking to <strong>Check Names</strong>, I got a <strong>Name Not Found</strong> error:</p>
+<figure><img src=/images/2020/05/image-2.png alt="Name not found when searching for AzureAD account in Windows"><figcaption>
+<p>Name not found when searching for AzureAD account in Windows</p>
+</figcaption>
+</figure>
+<h2 id=solution-use-powershell>
+Solution, use PowerShell!
+<a class=heading-link href=#solution-use-powershell>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>With some internet research, I&rsquo;ve found this article which describes how can we manage the local <strong>Administrators</strong> group on Azure AD joined machines: <a href=https://docs.microsoft.com/en-us/azure/active-directory/devices/assign-local-admin#manually-elevate-a-user-on-a-device>Assign local admins to Azure AD joined devices</a>. You might be thinking that <strong>Hyper-V administrators</strong> and <strong>Administrators</strong> are not the same groups, but the process is the same 😉</p>
+<p>The article says that we could use the <strong>net.exe</strong> application, but we&rsquo;re not going to do that, that&rsquo;s not considered a best practice in the year 2020. We&rsquo;re going to use PowerShell!</p>
+<p>For reference, this is the command to run from <strong>CMD</strong> <code>net localgroup "Hyper-v Administrators" /add "AzureAD\UserUpn"</code></p>
+<p>In PowerShell we can use the <code>Add-LocalGroupMember</code> cmdlet to achieve the same results.</p>
+<figure><img src=/images/2020/05/image-3.png alt="Results of running: Get-Help Add-LocalGroupMember -Examples"><figcaption>
+<p>Results of running: Get-Help Add-LocalGroupMember -Examples</p>
+</figcaption>
+</figure>
+<p>I&rsquo;ll execute the following command <code>Add-LocalGroupMember -Group 'Hyper-V Administrators' -Member 'azuread\sassdavid'</code></p>
+<p>And also confirm the result using <code>Get-LocalGroupMember -Group 'Hyper-V Administrators'</code></p>
+<figure><img src=/images/2020/05/image-4.png alt="Confirm that Add-LocalGroupMember worked"><figcaption>
+<p>Confirm that Add-LocalGroupMember worked</p>
+</figcaption>
+</figure>
+<p>One more thing to do, is to check the <strong>Hyper-V Administrators</strong> group&rsquo;s properties using Computer Management and confirm that our account is there.</p>
+<figure><img src=/images/2020/05/image-5.png alt="Hyper-V Administratorsgroup properties"><figcaption>
+<p>Hyper-V Administrators group properties</p>
+</figcaption>
+</figure>
+<p>I hope this post will help you, happy scripting!</p>
+</article>
+</section>
+</div>
+<footer class=footer>
+<section class=container>
+©
+2019 -
+2022
+David Sass
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
+</section>
+</footer>
+</main>
+<script src=/js/coder.min.39a51230dce2ac866c049b52573e38bf60666af4bc63c1bdf203b9b2d95b1cd6.js integrity="sha256-OaUSMNzirIZsBJtSVz44v2BmavS8Y8G98gO5stlbHNY="></script>
+</body>
+</html>

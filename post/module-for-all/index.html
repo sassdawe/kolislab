@@ -1,0 +1,147 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=content-language content="en">
+<meta name=color-scheme content="light dark">
+<meta name=author content="David Sass">
+<meta name=description content="Install a PowerShell module on Windows once and use it with both Windows PowerShell and PowerShell (core)">
+<meta name=keywords content="blog,developer,architect,sassdawe">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Install Modules for both PowerShell editions">
+<meta name=twitter:description content="Install a PowerShell module on Windows once and use it with both Windows PowerShell and PowerShell (core)">
+<meta property="og:title" content="Install Modules for both PowerShell editions">
+<meta property="og:description" content="Install a PowerShell module on Windows once and use it with both Windows PowerShell and PowerShell (core)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://kolislab.com/post/module-for-all/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2021-07-02T13:58:09+00:00">
+<meta property="article:modified_time" content="2021-07-02T13:58:09+00:00">
+<title>
+Install Modules for both PowerShell editions · kolislab
+</title>
+<link rel=canonical href=http://kolislab.com/post/module-for-all/>
+<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
+<link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen>
+<link rel=stylesheet href=/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin=anonymous media=screen>
+<link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16>
+<link rel=apple-touch-icon href=/images/apple-touch-icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png>
+<meta name=generator content="Hugo 0.92.1">
+</head>
+<body class="preload-transitions colorscheme-auto">
+<div class=float-container>
+<a id=dark-mode-toggle class=colorscheme-toggle>
+<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</div>
+<main class=wrapper>
+<nav class=navigation>
+<section class=container>
+<a class=navigation-title href=/>
+kolislab
+</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle>
+<i class="fa fa-bars fa-fw" aria-hidden=true></i>
+</label>
+<ul class=navigation-list>
+<li class=navigation-item>
+<a class=navigation-link href=/post/>Blog</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=/about/>About</a>
+</li>
+</ul>
+</section>
+</nav>
+<div class=content>
+<section class="container page">
+<article>
+<header>
+<h1 class=title>
+<a class=title-link href=http://kolislab.com/post/module-for-all/>
+Install Modules for both PowerShell editions
+</a>
+</h1>
+</header>
+<p>We have two PowerShell editions what we could use on Windows, these are <strong>Windows PowerShell</strong> and <strong>PowerShell</strong> (<em>Core).</em> Now one of the challenges we face with the two editions comes from where they store the installed PowerShell modules. Depending on the folder, it&rsquo;s possible that we need to install a module twice and that means we&rsquo;ll need to keep both versions up-to-date independently from each other. <strong>But there is a solution for this challenge!</strong></p>
+<h2 id=quick-look-at-envpsmodulepath>
+Quick look at $env:PSModulePath
+<a class=heading-link href=#quick-look-at-envpsmodulepath>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>PowerShell (both editions) uses the <strong>PSModulePath</strong> environment variable <code>$env:PSModulePath</code> to store the list of folders which could be used to store PowerShell modules.</p>
+<p><em>Note: It is possible to extend the list of folders by editing the user or system level environment variable.</em></p>
+<p>Let&rsquo;s compare the two lists:</p>
+<p><em>Note: It is expected that the list of folders will not be the same on every computer. But there are some default folders on this list.</em></p>
+<table>
+<thead>
+<tr>
+<th>Windows PowerShell</th>
+<th>PowerShell</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C:\Users\username\Documents\WindowsPowerShell\Modules</td>
+<td>C:\Users\username\Documents\PowerShell\Modules</td>
+</tr>
+<tr>
+<td></td>
+<td>C:\Program Files\PowerShell\Modules</td>
+</tr>
+<tr>
+<td></td>
+<td>c:\program files\powershell\7-lts\Modules</td>
+</tr>
+<tr>
+<td><strong>C:\Program Files\WindowsPowerShell\Modules</strong></td>
+<td><strong>C:\Program Files\WindowsPowerShell\Modules</strong></td>
+</tr>
+<tr>
+<td>C:\Windows\system32\WindowsPowerShell\v1.0\Modules</td>
+<td>C:\Windows\system32\WindowsPowerShell\v1.0\Modules</td>
+</tr>
+<tr>
+<td>C:\Program Files\Microsoft Monitoring Agent\Agent\PowerShell\</td>
+<td>C:\Program Files\Microsoft Monitoring Agent\Agent\PowerShell\</td>
+</tr>
+<tr>
+<td>C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\7.3.1125.0</td>
+<td>C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\7.3.1125.0</td>
+</tr>
+</tbody>
+</table>
+<p>As you can see <code>C:\Program Files\WindowsPowerShell\Modules</code> is being used by both PowerShell editions, which means those modules which support both PowerShell editions could be placed - or installed - into this folder, and they will be visible for both editions. <em>And we only need to keep these modules updated once.</em> <strong>\o/</strong></p>
+<h2 id=how-to-install-modules-into-this-folder>
+How to install modules into this folder?
+<a class=heading-link href=#how-to-install-modules-into-this-folder>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>The easiest way (if you ask me, and I&rsquo;m writing this post which means I asked me) is running <strong>Windows PowerShell</strong> as an admin and execute <code>Install-Module</code> without using the <code>-Scope</code> parameter. For example:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-PowerShell data-lang=PowerShell>Install-Module Microsoft.PowerShell.SecretManagement, Microsoft.PowerShell.SecretStore
+</code></pre></div><p><strong>That&rsquo;s it. Happy scripting!</strong></p>
+<blockquote>
+<p>PS: I highly encourage you to head over to Microsoft Tech Community and check out this awesome post from Thomas Maurer which inspired me to write host blog post
+<a href=https://techcommunity.microsoft.com/t5/itops-talk-blog/stop-typing-powershell-credentials-in-demos-using-powershell/ba-p/2272072>Stop typing PowerShell credentials in demos using PowerShell SecretManagement</a></p>
+</blockquote>
+</article>
+</section>
+</div>
+<footer class=footer>
+<section class=container>
+©
+2019 -
+2022
+David Sass
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
+</section>
+</footer>
+</main>
+<script src=/js/coder.min.39a51230dce2ac866c049b52573e38bf60666af4bc63c1bdf203b9b2d95b1cd6.js integrity="sha256-OaUSMNzirIZsBJtSVz44v2BmavS8Y8G98gO5stlbHNY="></script>
+</body>
+</html>

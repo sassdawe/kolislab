@@ -1,0 +1,184 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=content-language content="en">
+<meta name=color-scheme content="light dark">
+<meta name=author content="David Sass">
+<meta name=description content="I&rsquo;m in general interested in everything OfficeDevPnP but I&rsquo;m not a developer. I like to think that I&rsquo;m a Hacker, the old school &ldquo;do something which wasn&rsquo;t designed&rdquo; type of hacker.
+These days I&rsquo;m experimenting with Docker and I wanted to play with the Office365-CLI and I thought why not run it from a Docker container. And maybe, just to make it more interesting run it from a Nano Server.">
+<meta name=keywords content="blog,developer,architect,sassdawe">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Office365-CLI in a Nano Server Container">
+<meta name=twitter:description content="I&rsquo;m in general interested in everything OfficeDevPnP but I&rsquo;m not a developer. I like to think that I&rsquo;m a Hacker, the old school &ldquo;do something which wasn&rsquo;t designed&rdquo; type of hacker.
+These days I&rsquo;m experimenting with Docker and I wanted to play with the Office365-CLI and I thought why not run it from a Docker container. And maybe, just to make it more interesting run it from a Nano Server.">
+<meta property="og:title" content="Office365-CLI in a Nano Server Container">
+<meta property="og:description" content="I&rsquo;m in general interested in everything OfficeDevPnP but I&rsquo;m not a developer. I like to think that I&rsquo;m a Hacker, the old school &ldquo;do something which wasn&rsquo;t designed&rdquo; type of hacker.
+These days I&rsquo;m experimenting with Docker and I wanted to play with the Office365-CLI and I thought why not run it from a Docker container. And maybe, just to make it more interesting run it from a Nano Server.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://kolislab.com/post/office365-cli-in-a-nano-server-container/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2018-06-06T21:23:00+00:00">
+<meta property="article:modified_time" content="2018-06-06T21:23:00+00:00">
+<title>
+Office365-CLI in a Nano Server Container · kolislab
+</title>
+<link rel=canonical href=http://kolislab.com/post/office365-cli-in-a-nano-server-container/>
+<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
+<link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen>
+<link rel=stylesheet href=/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin=anonymous media=screen>
+<link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16>
+<link rel=apple-touch-icon href=/images/apple-touch-icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png>
+<meta name=generator content="Hugo 0.92.1">
+</head>
+<body class="preload-transitions colorscheme-auto">
+<div class=float-container>
+<a id=dark-mode-toggle class=colorscheme-toggle>
+<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</div>
+<main class=wrapper>
+<nav class=navigation>
+<section class=container>
+<a class=navigation-title href=/>
+kolislab
+</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle>
+<i class="fa fa-bars fa-fw" aria-hidden=true></i>
+</label>
+<ul class=navigation-list>
+<li class=navigation-item>
+<a class=navigation-link href=/post/>Blog</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=/about/>About</a>
+</li>
+</ul>
+</section>
+</nav>
+<div class=content>
+<section class="container page">
+<article>
+<header>
+<h1 class=title>
+<a class=title-link href=http://kolislab.com/post/office365-cli-in-a-nano-server-container/>
+Office365-CLI in a Nano Server Container
+</a>
+</h1>
+</header>
+<p>I&rsquo;m in general interested in everything <a href=https://aka.ms/officedevpnp>OfficeDevPnP</a> but I&rsquo;m not a developer. I like to think that I&rsquo;m a Hacker, the old school <em>&ldquo;do something which wasn&rsquo;t designed&rdquo;</em> type of hacker.</p>
+<p>These days I&rsquo;m experimenting with Docker and I wanted to play with the <a href=https://github.com/SharePoint/office365-cli>Office365-CLI</a> and I thought why not run it from a <strong>Docker</strong> container. And maybe, just to make it more interesting run it from a Nano Server.</p>
+<p>So these were my initial thoughts which lead to this blog post.</p>
+<h5 id=prerequisites>
+Prerequisites
+<a class=heading-link href=#prerequisites>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h5>
+<p>Reading the installation guide on GitHub I realized that I&rsquo;ll need <strong>npm</strong> which means I need to install <strong>Node.js</strong>.</p>
+<h5 id=the-first-challenge>
+The first challenge
+<a class=heading-link href=#the-first-challenge>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h5>
+<p>Ok, but how can I install the node.js on a Nano Server inside a container? It would be nice to have a package manager for Windows.
+Wait! There is one and it is called <a href=http://chocolatey.org/>Chocolatey</a></p>
+<p><em>I have to mention that you need to trust the author of the packages which might be not that easy for everyone.</em></p>
+<p>Also, I bet other methods are exist to install the prerequisites and I&rsquo;m just not aware.</p>
+<h5 id=the-steps>
+The steps
+<a class=heading-link href=#the-steps>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h5>
+<ol>
+<li>warm up the container</li>
+<li>install Chocolatey</li>
+<li>install node.js</li>
+<li>install git</li>
+<li>restart the container</li>
+<li>install Office365-CLI</li>
+<li>That&rsquo;s it</li>
+</ol>
+<h5 id=detailed-steps>
+Detailed steps
+<a class=heading-link href=#detailed-steps>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h5>
+<h6 id=warm-up-the-container>
+Warm up the container
+<a class=heading-link href=#warm-up-the-container>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h6>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-PowerShell data-lang=PowerShell>docker run -i -t --name nano microsoft/powershell
+docker start nano
+docker exec -i -t nano pwsh
+</code></pre></div><p><img src=/content/images/2019/01/2018-06-06--5--1.png alt="pwsh 6.o">
+Trust me this is a Nano Server 2016</p>
+<h6 id=install-chocolatey>
+Install Chocolatey
+<a class=heading-link href=#install-chocolatey>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h6>
+<p>As I mentioned above Chocolatey will be our Package manager for Windows</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-PowerShell data-lang=PowerShell>Set-ExecutionPolicy Bypass -Scope <span style=font-weight:700>Process</span> -Force
+iex ((New-Object System.Net.WebClient).DownloadString(<span style=font-style:italic>&#39;https://chocolatey.org/install.ps1&#39;</span>))
+</code></pre></div><p>It will give some errors because we are running it on PowerShell Core. It&rsquo;s safe to ignore them.</p>
+<h6 id=install-nodejs-and-git>
+Install Node.js and Git
+<a class=heading-link href=#install-nodejs-and-git>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h6>
+<p>Running the following commands the two prerequisite will be installed by Chocolatey.
+You will need to consent during the installation, just hit <code>y</code></p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-PowerShell data-lang=PowerShell>choco install nodejs.install
+choco install git.install
+</code></pre></div><p><img src=/content/images/2019/01/2018-06-06--4-.png alt="Installing Git and Node.js"></p>
+<h6 id=restart-the-container>
+Restart the container
+<a class=heading-link href=#restart-the-container>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h6>
+<p>Because we haven&rsquo;t created + started + connected just created + connected to the container when we exit - by typing in <code>exit</code> - the container will automatically stop. So we just need to start it again and connect to it.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-PowerShell data-lang=PowerShell>exit
+
+docker start nano
+docker exec -i -t nano pwsh
+</code></pre></div><p>######Install Office365-CLI
+Lets install the CLI using npm.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-PowerShell data-lang=PowerShell>npm i -g @pnp/office365-cli
+</code></pre></div><p>After it was successfully installed you start using the CLI</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-PowerShell data-lang=PowerShell>office365
+</code></pre></div><p><img src=/content/images/2019/01/2018-06-06--6-.png alt="Office365-CLI in action"></p>
+<h5 id=final-thoughts>
+Final thoughts
+<a class=heading-link href=#final-thoughts>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h5>
+<p>If you find a bug in the CLI please report it on GitHub.</p>
+</article>
+</section>
+</div>
+<footer class=footer>
+<section class=container>
+©
+2019 -
+2022
+David Sass
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
+</section>
+</footer>
+</main>
+<script src=/js/coder.min.39a51230dce2ac866c049b52573e38bf60666af4bc63c1bdf203b9b2d95b1cd6.js integrity="sha256-OaUSMNzirIZsBJtSVz44v2BmavS8Y8G98gO5stlbHNY="></script>
+</body>
+</html>

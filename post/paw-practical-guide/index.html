@@ -1,0 +1,150 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=content-language content="en">
+<meta name=color-scheme content="light dark">
+<meta name=author content="David Sass">
+<meta name=description content="Where we are    We already have some quality materials - like the Microsoft Cybersecurity Reference Architecture - about the security best practices of the Azure Cloud including possibly everything related to Cybersecurity but I feel that something is missing and I&rsquo;ll tell you why in a moment. If you take a closer look at the reference material you&rsquo;ll see a red bartitled: Privileged Admin Workstations (PAWs) and in the right side of that bar you&rsquo;ll see ESAE Admin Forest which is described here ESAE Administrative Forest Design Approach">
+<meta name=keywords content="blog,developer,architect,sassdawe">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Practical guide to manage the PAW machines">
+<meta name=twitter:description content="Where we are    We already have some quality materials - like the Microsoft Cybersecurity Reference Architecture - about the security best practices of the Azure Cloud including possibly everything related to Cybersecurity but I feel that something is missing and I&rsquo;ll tell you why in a moment. If you take a closer look at the reference material you&rsquo;ll see a red bartitled: Privileged Admin Workstations (PAWs) and in the right side of that bar you&rsquo;ll see ESAE Admin Forest which is described here ESAE Administrative Forest Design Approach">
+<meta property="og:title" content="Practical guide to manage the PAW machines">
+<meta property="og:description" content="Where we are    We already have some quality materials - like the Microsoft Cybersecurity Reference Architecture - about the security best practices of the Azure Cloud including possibly everything related to Cybersecurity but I feel that something is missing and I&rsquo;ll tell you why in a moment. If you take a closer look at the reference material you&rsquo;ll see a red bartitled: Privileged Admin Workstations (PAWs) and in the right side of that bar you&rsquo;ll see ESAE Admin Forest which is described here ESAE Administrative Forest Design Approach">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://kolislab.com/post/paw-practical-guide/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2019-05-26T14:22:22+00:00">
+<meta property="article:modified_time" content="2019-05-26T14:22:22+00:00">
+<title>
+Practical guide to manage the PAW machines · kolislab
+</title>
+<link rel=canonical href=http://kolislab.com/post/paw-practical-guide/>
+<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
+<link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen>
+<link rel=stylesheet href=/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin=anonymous media=screen>
+<link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16>
+<link rel=apple-touch-icon href=/images/apple-touch-icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png>
+<meta name=generator content="Hugo 0.92.1">
+</head>
+<body class="preload-transitions colorscheme-auto">
+<div class=float-container>
+<a id=dark-mode-toggle class=colorscheme-toggle>
+<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</div>
+<main class=wrapper>
+<nav class=navigation>
+<section class=container>
+<a class=navigation-title href=/>
+kolislab
+</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle>
+<i class="fa fa-bars fa-fw" aria-hidden=true></i>
+</label>
+<ul class=navigation-list>
+<li class=navigation-item>
+<a class=navigation-link href=/post/>Blog</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=/about/>About</a>
+</li>
+</ul>
+</section>
+</nav>
+<div class=content>
+<section class="container page">
+<article>
+<header>
+<h1 class=title>
+<a class=title-link href=http://kolislab.com/post/paw-practical-guide/>
+Practical guide to manage the PAW machines
+</a>
+</h1>
+</header>
+<h2 id=where-we-are>
+Where we are
+<a class=heading-link href=#where-we-are>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>We already have some quality materials - like the <a href=https://gallery.technet.microsoft.com/Cybersecurity-Reference-883fb54c>Microsoft Cybersecurity Reference Architecture</a> - about the security best practices of the Azure Cloud including possibly everything related to <em>Cybersecurity</em> but I feel that something is missing and I&rsquo;ll tell you why in a moment.
+<img src=/content/images/2019/05/_ReferenceArch.jpg alt=_ReferenceArch>
+If you take a closer look at the reference material you&rsquo;ll see a red bar titled: <code>Privileged Admin Workstations (PAWs)</code> and in the right side of that bar you&rsquo;ll see <em>ESAE Admin Forest</em> which is described here <a href=https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#esae-administrative-forest-design-approach>ESAE Administrative Forest Design Approach</a></p>
+<blockquote>
+<p>ESAE stands for <strong>Enhanced Security Administrative Environment</strong></p>
+</blockquote>
+<p>Stop for a moment and think about why would we need a dedicated admin forest to manage the PAW boxes? The answer is in the <a href=https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material>Active Directory administrative tier model</a> which is described at the top of the article.
+<img src=/content/images/2019/05/paw_rm_fig4.jpg alt=paw_rm_fig4></p>
+<h2 id=the-challenge>
+The challenge
+<a class=heading-link href=#the-challenge>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>The challenge we face here is that someone has to manage the PAW machines which are used to conduct highly privileged activities but the group responsible for the PAWs should not be the same group which manages the productivity devices of the rest of the organization. But as of today (5/26/2019) we cannot do that using Azure AD and Intune. The Device Administrator role has rights to manage all Intune managed devices, which does not meet the requirements of the previously mentioned tier model.</p>
+<blockquote>
+<p>Within larger or more security focused companies there is a clear segregation of duties and segregation of infrastructure elements as well. Not because we don&rsquo;t trust our admins but because they are the targets of attackers. In an unfortunate event where a machine or an account used by an admin gets compromised the attacker will have much better odds to achieve its goals.</p>
+</blockquote>
+<h2 id=the-solution>
+The solution
+<a class=heading-link href=#the-solution>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>Following the Reference Architecture, we must segregate the PAW boxes from the rest of the organization and the only option to do that is to create the cloud version of the ESAE Admin Forest.</p>
+<blockquote>
+<p>I like to call it <code>Red Cloud</code></p>
+</blockquote>
+<h3 id=in-practice>
+In practice
+<a class=heading-link href=#in-practice>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h3>
+<ol>
+<li>
+<p>We&rsquo;ve to create a new Azure AD environment, I suggest purchasing <em>Microsoft 365 E5</em> licenses for this environment and something lightweight like the Surface Pro 6 to be used as the PAWs. Using M365 E5, the PAW machines can run Windows 10 Enterprise, be managed by Intune and be protected by Microsoft Defender ATP and everything else which is suggested or will be suggested by these pages <a href=https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/overview-secure-score>Defender Secure Score</a> and <a href=https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-security-configuration-framework/level-1-enterprise-administrator-security>Level 1 enterprise administrator workstation security configuration (work in progress)</a>.</p>
+</li>
+<li>
+<p>We&rsquo;ve to invite these Red Cloud accounts into our Production Tenant as B2B guest accounts and convert them into members using the AzureAD PowerShell module and the following cmdlet: <code>Set-AzureADUser -UserType Member</code>.</p>
+</li>
+<li>
+<p>We&rsquo;ll have to grant them licenses in the Production Tenant. I suggest the followings: AAD Premium P1 & P2, Azure Advanced Threat Protection, Azure Information Protection Premium P1 & P2, Microsoft Azure Multi-Factor Authentication, Microsoft Cloud App Security, Microsoft Intune, Windows 10 Enterprise, Windows Defender ATP.</p>
+</li>
+<li>
+<p>Using Azure Active Directory Privileged Identity Management (PIM), we can grant the required roles for the Red Cloud accounts. These roles can be: Global Admin, Security Administrator, etc.</p>
+</li>
+</ol>
+<h3 id=limitations>
+Limitations
+<a class=heading-link href=#limitations>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h3>
+<p>Not everything works together nicely with the Red Cloud approach, based on my experience the <a href=https://aad.portal.azure.com>Azure AD Portal</a> and the <strong>Azure ATP</strong> portal works just fine, but the <strong>Microsoft Cloud App Security</strong> and the <strong>Microsoft Defender ATP</strong> portal do not support the guest accounts, I hope this will change in the future.</p>
+<blockquote>
+<p>Fortunately, these limitations do not affect our goal here :)</p>
+</blockquote>
+<p>We wanted to have the ability to manage the PAWs from a different Tenant and not from the Production environment where the productivity devices are located, and we achieved this. We can logon to the PAW boxes and access the Production AAD using our Red Cloud IDs and leverage PIM to elevate our access level and manage the Tenant as we see fit.</p>
+<p>In the other way around, the Device Administrators of the Production Tenant cannot control the PAW boxes and we&rsquo;ll be protected in case an attacker manages to breach any of our device administrators of the Production Tenant.</p>
+</article>
+</section>
+</div>
+<footer class=footer>
+<section class=container>
+©
+2019 -
+2022
+David Sass
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
+</section>
+</footer>
+</main>
+<script src=/js/coder.min.39a51230dce2ac866c049b52573e38bf60666af4bc63c1bdf203b9b2d95b1cd6.js integrity="sha256-OaUSMNzirIZsBJtSVz44v2BmavS8Y8G98gO5stlbHNY="></script>
+</body>
+</html>

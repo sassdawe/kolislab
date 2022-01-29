@@ -1,0 +1,114 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=content-language content="en">
+<meta name=color-scheme content="light dark">
+<meta name=author content="David Sass">
+<meta name=description content="Install and add Midnight Commander (MC) to Windows Terminal.">
+<meta name=keywords content="blog,developer,architect,sassdawe">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Midnight Commander meets Windows Terminal">
+<meta name=twitter:description content="Install and add Midnight Commander (MC) to Windows Terminal.">
+<meta property="og:title" content="Midnight Commander meets Windows Terminal">
+<meta property="og:description" content="Install and add Midnight Commander (MC) to Windows Terminal.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://kolislab.com/post/mc-meets-terminal/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2021-04-24T14:44:35+00:00">
+<meta property="article:modified_time" content="2021-04-24T14:44:35+00:00">
+<title>
+Midnight Commander meets Windows Terminal · kolislab
+</title>
+<link rel=canonical href=http://kolislab.com/post/mc-meets-terminal/>
+<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
+<link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen>
+<link rel=stylesheet href=/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin=anonymous media=screen>
+<link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16>
+<link rel=apple-touch-icon href=/images/apple-touch-icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png>
+<meta name=generator content="Hugo 0.92.1">
+</head>
+<body class="preload-transitions colorscheme-auto">
+<div class=float-container>
+<a id=dark-mode-toggle class=colorscheme-toggle>
+<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</div>
+<main class=wrapper>
+<nav class=navigation>
+<section class=container>
+<a class=navigation-title href=/>
+kolislab
+</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle>
+<i class="fa fa-bars fa-fw" aria-hidden=true></i>
+</label>
+<ul class=navigation-list>
+<li class=navigation-item>
+<a class=navigation-link href=/post/>Blog</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=/about/>About</a>
+</li>
+</ul>
+</section>
+</nav>
+<div class=content>
+<section class="container page">
+<article>
+<header>
+<h1 class=title>
+<a class=title-link href=http://kolislab.com/post/mc-meets-terminal/>
+Midnight Commander meets Windows Terminal
+</a>
+</h1>
+</header>
+<p>Those of us who were born into the DOS era probably all used Norton Commander (NC), the famous blue-white two panel file manager. Of course, NC is long gone, but is has a clone called <a href=https://github.com/MidnightCommander/mc>Midnight Commander</a> or MC for sort, created by <a href=https://en.wikipedia.org/wiki/Miguel_de_Icaza>Miguel de Icaza</a>. Let&rsquo;s look at how can we install MC on Windows these days.</p>
+<h2 id=options-to-install-midnight-commander>
+Options to install Midnight Commander
+<a class=heading-link href=#options-to-install-midnight-commander>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>These are the source from where we can install MC</p>
+<ol>
+<li><a href=https://docs.microsoft.com/en-us/windows/package-manager/winget/>Winget</a> (public preview)</li>
+<li>Chocolatey (directly)</li>
+<li>From <a href=http://midnight-commander.org/>Official Website</a></li>
+</ol>
+<p>I let you do the installation (I used Winget).</p>
+<h2 id=setting-up-the-terminal>
+Setting up the Terminal
+<a class=heading-link href=#setting-up-the-terminal>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h2>
+<p>After the installation of MC, we need to add a new <code>profile</code> to Windows Terminal. Here is an example:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>{
+   &#34;hidden&#34;: false,
+   &#34;name&#34;: &#34;Midnight Commander&#34;,
+   &#34;commandline&#34;: &#34;C:\\Program Files (x86)\\Midnight Commander\\mc.exe&#34;,
+   &#34;guid&#34;: &#34;{47b22a91-371e-4029-8836-627c48a18575}&#34;,
+   &#34;tabTitle&#34;: &#34;Midnight Commander&#34;,
+   &#34;icon&#34;: &#34;C:\\Users\\SassDavid\\Pictures\\mc.icon.png&#34;
+},
+</code></pre></div><p>And we are done.</p>
+</article>
+</section>
+</div>
+<footer class=footer>
+<section class=container>
+©
+2019 -
+2022
+David Sass
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
+</section>
+</footer>
+</main>
+<script src=/js/coder.min.39a51230dce2ac866c049b52573e38bf60666af4bc63c1bdf203b9b2d95b1cd6.js integrity="sha256-OaUSMNzirIZsBJtSVz44v2BmavS8Y8G98gO5stlbHNY="></script>
+</body>
+</html>
