@@ -69,4 +69,8 @@ pygmentscodefencesguesssyntax = true
 [[menu.main]]
   name = "About"
   weight = 2
-  url = "about/"
+  url = "post/about"
+[[menu.main]]
+  name = "By me a coffee"
+  weight = 3
+  url = "http://www.buymeacoffee.com/sassdawe"
