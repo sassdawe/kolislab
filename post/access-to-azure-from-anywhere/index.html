@@ -1,228 +1,34 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta http-equiv=content-language content="en">
-<meta name=color-scheme content="light dark">
-<meta name=author content="David Sass">
-<meta name=description content="! Warning !     The content of this post might not be aligned with you company&rsquo;s internal IT security rules, I suggest to talk to your manager and request an approval before you try this out in any of your environments.
- Introduction, setting the stage    We should start with an overall picture of an imaginary Enterprise network
-Imagine that your ADFS is sitting behind the corporate firewall and your users cannot access it from the Internet without VPN.">
-<meta name=keywords content="blog,developer,architect,sassdawe">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Red Team type of Access to Azure from Anywhere">
-<meta name=twitter:description content="! Warning !     The content of this post might not be aligned with you company&rsquo;s internal IT security rules, I suggest to talk to your manager and request an approval before you try this out in any of your environments.
- Introduction, setting the stage    We should start with an overall picture of an imaginary Enterprise network
-Imagine that your ADFS is sitting behind the corporate firewall and your users cannot access it from the Internet without VPN.">
-<meta property="og:title" content="Red Team type of Access to Azure from Anywhere">
-<meta property="og:description" content="! Warning !     The content of this post might not be aligned with you company&rsquo;s internal IT security rules, I suggest to talk to your manager and request an approval before you try this out in any of your environments.
- Introduction, setting the stage    We should start with an overall picture of an imaginary Enterprise network
-Imagine that your ADFS is sitting behind the corporate firewall and your users cannot access it from the Internet without VPN.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="http://kolislab.com/post/access-to-azure-from-anywhere/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2019-02-12T06:00:00+00:00">
-<meta property="article:modified_time" content="2019-02-12T06:00:00+00:00">
-<title>
-Red Team type of Access to Azure from Anywhere · kolislab
-</title>
-<link rel=canonical href=http://kolislab.com/post/access-to-azure-from-anywhere/>
-<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
-<link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen>
-<link rel=stylesheet href=/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin=anonymous media=screen>
-<link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32>
-<link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16>
-<link rel=apple-touch-icon href=/images/apple-touch-icon.png>
-<link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png>
-<meta name=generator content="Hugo 0.92.2">
-<script type=text/javascript>!function(b,d,a){var e=b.location,o="script",n="instrumentationKey",g="ingestionendpoint",k="disableExceptionTracking",i="ai.device.",j="toLowerCase",h="crossOrigin",l="POST",m="appInsightsSDK",f=a.name||"appInsights",c;(a.name||b[m])&&(b[m]=f),c=b[f]||function(f){var z=!1,q=!1,c={initialize:!0,queue:[],sv:"5",version:2,config:f},r,s,m,x,y,B,p,A;function w(b,f){var a={},d="Browser";return a[i+"id"]=d[j](),a[i+"type"]=d,a["ai.operation.name"]=e&&e.pathname||"_unknown_",a["ai.internal.sdkVersion"]="javascript:snippet_"+(c.sv||c.version),{time:function(){var a=new Date;function b(b){var a=""+b;return 1===a.length&&(a="0"+a),a}return a.getUTCFullYear()+"-"+b(1+a.getUTCMonth())+"-"+b(a.getUTCDate())+"T"+b(a.getUTCHours())+":"+b(a.getUTCMinutes())+":"+b(a.getUTCSeconds())+"."+((a.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:b,name:"Microsoft.ApplicationInsights."+b.replace(/-/g,"")+"."+f,sampleRate:100,tags:a,data:{baseData:{ver:2}}}}if(r=f.url||a.src,r){function u(x){var h,i,t,u,v,s,o,p,k,d,m;z=!0,c.queue=[],q||(q=!0,h=r,o=function(){var a={},d=f.connectionString,e,b,c,h,i;if(d)for(e=d.split(";"),b=0;b<e.length;b++)c=e[b].split("="),2===c.length&&(a[c[0][j]()]=c[1]);return a[g]||(h=a.endpointsuffix,i=h?a.location:null,a[g]="https://"+(i?i+".":"")+"dc."+(h||"services.visualstudio.com")),a}(),p=o[n]||f[n]||"",k=o[g],d=k?k+"/v2/track":f.endpointUrl,(m=[]).push((i="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",t=h,u=d,(s=(v=w(p,"Exception")).data).baseType="ExceptionData",s.baseData.exceptions=[{typeName:"SDKLoadFailed",message:i.replace(/\./g,"-"),hasFullStack:!1,stack:i+"\nSnippet failed to load ["+t+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(e&&e.pathname||"_unknown_")+"\nEndpoint: "+u,parsedStack:[]}],v)),m.push(function(g,f,d,e){var b=w(p,"Message"),c=b.data,a;return c.baseType="MessageData",a=c.baseData,a.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+d+")").replace(/\"/g,"")+'"',a.properties={endpoint:e},b}(0,0,h,d)),function(e,f){var d,c;JSON&&(d=b.fetch,d&&!a.useXhr?d(f,{method:l,body:JSON.stringify(e),mode:"cors"}):XMLHttpRequest&&(c=new XMLHttpRequest,c.open(l,f),c.setRequestHeader("Content-type","application/json"),c.send(JSON.stringify(e))))}(m,d))}function t(b,a){q||setTimeout(function(){!a&&c.core||u()},500)}s=function(){var b=d.createElement(o),c;return b.src=r,c=a[h],!c&&""!==c||"undefined"==b[h]||(b[h]=c),b.onload=t,b.onerror=u,b.onreadystatechange=function(c,a){"loaded"!==b.readyState&&"complete"!==b.readyState||t(0,a)},b}(),a.ld<0?d.getElementsByTagName("head")[0].appendChild(s):setTimeout(function(){d.getElementsByTagName(o)[0].parentNode.appendChild(s)},a.ld||0)}try{c.cookie=d.cookie}catch(a){}function v(a){for(;a.length;)!function(a){c[a]=function(){var b=arguments;z||c.queue.push(function(){c[a].apply(c,b)})}}(a.pop())}return m="track",x="TrackPage",y="TrackEvent",v([m+"Event",m+"PageView",m+"Exception",m+"Trace",m+"DependencyData",m+"Metric",m+"PageViewPerformance","start"+x,"stop"+x,"start"+y,"stop"+y,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),c.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},B=(f.extensionConfig||{}).ApplicationInsightsAnalytics||{},!0!==f[k]&&!0!==B[k]&&(p="onerror",v(["_"+p]),A=b[p],b[p]=function(a,b,d,e,f){var g=A&&A(a,b,d,e,f);return!0!==g&&c["_"+p]({message:a,url:b,lineNumber:d,columnNumber:e,error:f}),g},f.autoExceptionInstrumented=!0),c}(a.cfg);function p(){a.onInit&&a.onInit(c)}(b[f]=c).queue&&0===c.queue.length?(c.queue.push(p),c.trackPageView({})):p()}(window,document,{src:"https://js.monitor.azure.com/scripts/b/ai.2.min.js",crossOrigin:"anonymous",cfg:{instrumentationKey:"9497aefd-77f5-4cb8-9d7e-f612e42e55d2"}})</script>
-</head>
-<body class="preload-transitions colorscheme-auto">
-<div class=float-container>
-<a id=dark-mode-toggle class=colorscheme-toggle>
-<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
-</a>
-</div>
-<main class=wrapper>
-<nav class=navigation>
-<section class=container>
-<a class=navigation-title href=/>
-kolislab
-</a>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=content-language content="en"><meta name=color-scheme content="light dark"><meta name=author content="David Sass"><meta name=description content="! Warning ! The content of this post might not be aligned with you company&rsquo;s internal IT security rules, I suggest to talk to your manager and request an approval before you try this out in any of your environments.
+Introduction, setting the stage We should start with an overall picture of an imaginary Enterprise network
+Imagine that your ADFS is sitting behind the corporate firewall and your users cannot access it from the Internet without VPN."><meta name=keywords content="blog,developer,architect,sassdawe"><meta name=twitter:card content="summary"><meta name=twitter:title content="Red Team type of Access to Azure from Anywhere"><meta name=twitter:description content="! Warning ! The content of this post might not be aligned with you company&rsquo;s internal IT security rules, I suggest to talk to your manager and request an approval before you try this out in any of your environments.
+Introduction, setting the stage We should start with an overall picture of an imaginary Enterprise network
+Imagine that your ADFS is sitting behind the corporate firewall and your users cannot access it from the Internet without VPN."><meta property="og:title" content="Red Team type of Access to Azure from Anywhere"><meta property="og:description" content="! Warning ! The content of this post might not be aligned with you company&rsquo;s internal IT security rules, I suggest to talk to your manager and request an approval before you try this out in any of your environments.
+Introduction, setting the stage We should start with an overall picture of an imaginary Enterprise network
+Imagine that your ADFS is sitting behind the corporate firewall and your users cannot access it from the Internet without VPN."><meta property="og:type" content="article"><meta property="og:url" content="http://kolislab.com/post/access-to-azure-from-anywhere/"><meta property="article:section" content="post"><meta property="article:published_time" content="2019-02-12T06:00:00+00:00"><meta property="article:modified_time" content="2019-02-12T06:00:00+00:00"><title>Red Team type of Access to Azure from Anywhere · kolislab</title><link rel=canonical href=http://kolislab.com/post/access-to-azure-from-anywhere/><link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen><link rel=stylesheet href=/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><meta name=generator content="Hugo 0.102.1"><script type=text/javascript>!function(e,t,n){var s,o=e.location,f="script",m="instrumentationKey",a="ingestionendpoint",d="disableExceptionTracking",l="ai.device.",c="toLowerCase",r="crossOrigin",u="POST",h="appInsightsSDK",i=n.name||"appInsights";(n.name||e[h])&&(e[h]=i),s=e[i]||function(s){var p,g,v,j,C,k=!1,b=!1,i={initialize:!0,queue:[],sv:"5",version:2,config:s};function y(e,t){var n={},s="Browser";return n[l+"id"]=s[c](),n[l+"type"]=s,n["ai.operation.name"]=o&&o.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(i.sv||i.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}if(g=s.url||n.src,g){function E(){var r,l,d,h,f,p,v,j,_,w,O;k=!0,i.queue=[],b||(b=!0,l=g,h=function(){var t,n,o,i,r,e={},l=s.connectionString;if(l)for(o=l.split(";"),t=0;t<o.length;t++)n=o[t].split("="),2===n.length&&(e[n[0][c]()]=n[1]);return e[a]||(i=e.endpointsuffix,r=i?e.location:null,e[a]="https://"+(r?r+".":"")+"dc."+(i||"services.visualstudio.com")),e}(),f=h[m]||s[m]||"",p=h[a],r=p?p+"/v2/track":s.endpointUrl,(v=[]).push((d="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",j=l,_=r,(O=(w=y(f,"Exception")).data).baseType="ExceptionData",O.baseData.exceptions=[{typeName:"SDKLoadFailed",message:d.replace(/\./g,"-"),hasFullStack:!1,stack:d+`
+Snippet failed to load [`+j+`] -- Telemetry is disabled
+Help Link: https://go.microsoft.com/fwlink/?linkid=2128109
+Host: `+(o&&o.pathname||"_unknown_")+`
+Endpoint: `+_,parsedStack:[]}],w)),v.push(function(e,t,n,s){var o,i=y(f,"Message"),a=i.data;return a.baseType="MessageData",o=a.baseData,o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/"/g,"")+'"',o.properties={endpoint:s},i}(0,0,l,r)),function(t,s){if(JSON){var o,i=e.fetch;i&&!n.useXhr?i(s,{method:u,body:JSON.stringify(t),mode:"cors"}):XMLHttpRequest&&(o=new XMLHttpRequest,o.open(u,s),o.setRequestHeader("Content-type","application/json"),o.send(JSON.stringify(t)))}}(v,r))}function w(e,t){b||setTimeout(function(){!t&&i.core||E()},500)}v=function(){var s,e=t.createElement(f);return e.src=g,s=n[r],!s&&""!==s||"undefined"==e[r]||(e[r]=s),e.onload=w,e.onerror=E,e.onreadystatechange=function(t,n){"loaded"!==e.readyState&&"complete"!==e.readyState||w(0,n)},e}(),n.ld<0?t.getElementsByTagName("head")[0].appendChild(v):setTimeout(function(){t.getElementsByTagName(f)[0].parentNode.appendChild(v)},n.ld||0)}try{i.cookie=t.cookie}catch{}function _(e){for(;e.length;)!function(e){i[e]=function(){var t=arguments;k||i.queue.push(function(){i[e].apply(i,t)})}}(e.pop())}var h="track",O="TrackPage",x="TrackEvent";return _([h+"Event",h+"PageView",h+"Exception",h+"Trace",h+"DependencyData",h+"Metric",h+"PageViewPerformance","start"+O,"stop"+O,"start"+x,"stop"+x,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),i.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},C=(s.extensionConfig||{}).ApplicationInsightsAnalytics||{},!0!==s[d]&&!0!==C[d]&&(p="onerror",_(["_"+p]),j=e[p],e[p]=function(e,t,n,s,o){var a=j&&j(e,t,n,s,o);return!0!==a&&i["_"+p]({message:e,url:t,lineNumber:n,columnNumber:s,error:o}),a},s.autoExceptionInstrumented=!0),i}(n.cfg);function p(){n.onInit&&n.onInit(s)}(e[i]=s).queue&&0===s.queue.length?(s.queue.push(p),s.trackPageView({})):p()}(window,document,{src:"https://js.monitor.azure.com/scripts/b/ai.2.min.js",crossOrigin:"anonymous",cfg:{instrumentationKey:"9497aefd-77f5-4cb8-9d7e-f612e42e55d2"}})</script></head><body class="preload-transitions colorscheme-auto"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=/>kolislab</a>
 <input type=checkbox id=menu-toggle>
-<label class="menu-button float-right" for=menu-toggle>
-<i class="fa fa-bars fa-fw" aria-hidden=true></i>
-</label>
-<ul class=navigation-list>
-<li class=navigation-item>
-<a class=navigation-link href=/post/>Blog</a>
-</li>
-<li class=navigation-item>
-<a class=navigation-link href=/post/about>About</a>
-</li>
-<li class=navigation-item>
-<a class=navigation-link href=http://www.buymeacoffee.com/sassdawe>By me a coffee</a>
-</li>
-</ul>
-</section>
-</nav>
-<div class=content>
-<section class="container page">
-<article>
-<header>
-<h1 class=title>
-<a class=title-link href=http://kolislab.com/post/access-to-azure-from-anywhere/>
-Red Team type of Access to Azure from Anywhere
-</a>
-</h1>
-</header>
-<h2 id=-warning->
-! Warning !
-<a class=heading-link href=#-warning->
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h2>
-<blockquote>
-<p><strong>The content of this post might not be aligned with you company&rsquo;s internal IT security rules, I suggest to talk to your manager and request an approval before you try this out in any of your environments.</strong></p>
-</blockquote>
-<h2 id=introduction-setting-the-stage>
-Introduction, setting the stage
-<a class=heading-link href=#introduction-setting-the-stage>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h2>
-<p><em>We should start with an overall picture of an imaginary Enterprise network</em></p>
-<p><strong>Imagine that your ADFS is sitting behind the corporate firewall and your users cannot access it from the Internet without VPN.</strong></p>
-<p>Now continue.. <strong>Imagine that your company is using Office 365</strong> (or Microsoft 365) <strong>with Federated Authentication which requires access to that ADFS server which is not accessible from anywhere except your company network.</strong></p>
-<p>Just to keep things interested.. <strong>Imagine that your users have to use Smart Cards to logon into their workstations</strong> and this gives you Multi-factor Authentication.</p>
-<p>Finally just to color the picture.. <strong>Imagine that you&rsquo;re using Azure AD Privileged ID Management (PIM) from Privileged Admin Workstations.</strong> But the regular user base has access to different Azure subscriptions running different part of your Corporate environment in the Cloud.</p>
-<p>I&rsquo;d say that we created a pretty good situation here from the security standpoint and a quite common one from the usage standpoint.</p>
-<h2 id=innovation-happens>
-Innovation happens
-<a class=heading-link href=#innovation-happens>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h2>
-<p><em>In this section I&rsquo;m trying to give you a picture about Microsoft&rsquo;s innovation</em></p>
-<p>In the past, before 2016 (give or take), our options to access and administer Azure were the <a href=https://portal.azure.com>Portal</a>, the Azure PowerShell module and Visual Studio. But slowly Microsoft is releasing new tools to help us with our jobs.</p>
-<p>Today we can use Azure App on our mobile devices, the <strong>Azure Cloud Shell</strong> in our browsers to create and manage resources and we can use the <strong>Azure CLI</strong> as well - which is a cross platform command line interface - running on most of the Operating Systems.</p>
-<p>With these new tools we have new ways to do and automate our jobs and these tools use newer technologies under their hood.</p>
-<h2 id=new-technologies>
-New technologies
-<a class=heading-link href=#new-technologies>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h2>
-<p>One of these new technology is part of oAuth which helps with Authentication.</p>
-<h3 id=authentication-with-azure-cloud-shell>
-Authentication with Azure Cloud Shell
-<a class=heading-link href=#authentication-with-azure-cloud-shell>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h3>
-<p>When you open the Azure Cloud Shell it uses your browser&rsquo;s session to authenticate you seamlessly, you just have to wait a couple of seconds and you can start using it</p>
-<p><img src=/content/images/2019/02/azure-cloud-shell.png-1.jpg alt=azure-cloud-shell.png-1></p>
-<p>The Azure Cloud Shell in the background is an Ubuntu Linux virtual machine running in Azure and it comes with the Azure CLI pre-installed as you can see it in the picture above.</p>
-<h3 id=authentication-with-azure-cli>
-Authentication with Azure CLI
-<a class=heading-link href=#authentication-with-azure-cli>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h3>
-<p>We have a couple of options authenticating with the Azure CLI and because of the SSO we can skip the the authentication in the browser.</p>
-<p><img src=/content/images/2019/02/az-login-h.jpg alt=az-login-h></p>
-<p>But from Azure CLI running on your machine you&rsquo;ve to authenticate somehow, which is easy because using the <code>az login</code> command your browser will open where you can sign-in.</p>
-<p><img src=/content/images/2019/02/az-login.jpg alt=az-login></p>
-<p>But if you&rsquo;re on a device without a browser or you want to connect to a different subscription from Azure Cloud Shell you need to use device code flow option:
-<code>az login --use-device-code</code></p>
-<h3 id=device-code-flow>
-Device Code Flow
-<a class=heading-link href=#device-code-flow>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h3>
-<p>On devices where the interactive login process isn&rsquo;t available the Device Code Flow lets you authenticate using a different machine and providing a generated code from the console session.</p>
-<p>In the below picture try to imagine that the PowerShell console is running on a different machine where the only option to authenticate is the Device Code Flow.</p>
-<figure><img src=/images/2019/02/az-login-device-code.jpg>
-</figure>
-<h2 id=where-are-we-going-with-this>
-Where are we going with this?
-<a class=heading-link href=#where-are-we-going-with-this>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h2>
-<p>I hope you&rsquo;re still here, because this is the point where this post is starting to be interesting - at least for me.</p>
-<p>In our situation that we all imagined a couple of minutes ago&mldr; We&rsquo;d a stong dependenicy on our corporate network because we needed to use our ADFS service to authenticate, right? Right.</p>
-<blockquote>
-<p><em>Did you realize that the Azure Cloud Shell is actually not running on your company network?</em></p>
-</blockquote>
-<p>That&rsquo;s right. You&rsquo;re entry point is the browser running on your machine and exposing your browser&rsquo;s session to Azure Cloud Shell. Realizing this took me some time, so it&rsquo;s completly OK to learn this just now!</p>
-<p><strong>The question: Can we use Azure CLI from the anywhere on internet to access our Azure resources, including Azure AD?</strong></p>
-<p><strong>Yes, we can!</strong> <em>Reminder, this is the point where you need to talk to your manager before you do something which isn&rsquo;t allowed by your company.</em></p>
-<h2 id=exposures>
-Exposures
-<a class=heading-link href=#exposures>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h2>
-<h3 id=general-exposure>
-General Exposure
-<a class=heading-link href=#general-exposure>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h3>
-<p>When you&rsquo;re using the Azure CLI you&rsquo;ll have the same level of access to all resources in Azure what you&rsquo;d have using the Azure portal from your machine connected to the company network.</p>
-<blockquote>
-<p>If you&rsquo;ve owner level of access to a subscription you&rsquo;ll have owner level of access and you can do anything with that subscription.</p>
-</blockquote>
-<p>In case you&rsquo;re allowed to use the Azure CLI from the Internet you&rsquo;ve to make sure your threat model is ready to deal with this situation.</p>
-<h3 id=attack-vector-i>
-Attack vector I.
-<a class=heading-link href=#attack-vector-i>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h3>
-<p>A different exposure or we can say attack vector is when someone creates a rouge Azure CLI version and starts distributing it, and with this malicious version when you initiate a connection, the Rouge CLI could connect to a C&C server and initiate a rouge connection from that C&C machine and give back the device code your Rouge CLI to show you. So when you&rsquo;re authenticating in your browser you&rsquo;re actually letting the C&C server in into your Azure Subscriptions with your access level.</p>
-<h3 id=attack-vector-ii>
-Attack vector II.
-<a class=heading-link href=#attack-vector-ii>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h3>
-<p>The Azure CLI is caching the session token in your file system using encryption. If an attacker can extract your session token and decrypt it then you&rsquo;ll be having a really bad day.</p>
-<h2 id=mitigation>
-Mitigation
-<a class=heading-link href=#mitigation>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h2>
-<p>So far I didn&rsquo;t find anything. I&rsquo;m not sure if we can prevent the usage of the Azure CLI and even if we can prevent it then we&rsquo;d probably mess some things up with the Azure Cloud Shell as well.
-<em>If I learn anything useful in the future I&rsquo;ll update this post.</em></p>
-<h2 id=the-whole-process>
-The whole process
-<a class=heading-link href=#the-whole-process>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h2>
-<p>You&rsquo;ll need at least two machines with Internet connection, one of them has to be located on the company network so you could access you ADFS server.</p>
-<ol>
-<li>On the remote machine use the Azure CLI and the Device Code Flow to initiate a login process <code>az login --use-device-code</code> this will generate the required code.</li>
-<li>On the company network connected machine open <a href=https://microsoft.com/devicelogin>https://microsoft.com/devicelogin</a> and enter the code from the remote machine to authenticate.</li>
-<li>On the remote machine the you&rsquo;ll gain access the Azure.</li>
-</ol>
-</article>
-</section>
-</div>
-<footer class=footer>
-<section class=container>
-©
+<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/post/>Blog</a></li><li class=navigation-item><a class=navigation-link href=/post/about>About</a></li><li class=navigation-item><a class=navigation-link href=http://www.buymeacoffee.com/sassdawe>By me a coffee</a></li></ul></section></nav><div class=content><section class="container page"><article><header><h1 class=title><a class=title-link href=http://kolislab.com/post/access-to-azure-from-anywhere/>Red Team type of Access to Azure from Anywhere</a></h1></header><h2 id=-warning->! Warning !
+<a class=heading-link href=#-warning-><i class="fa fa-link" aria-hidden=true></i></a></h2><blockquote><p><strong>The content of this post might not be aligned with you company&rsquo;s internal IT security rules, I suggest to talk to your manager and request an approval before you try this out in any of your environments.</strong></p></blockquote><h2 id=introduction-setting-the-stage>Introduction, setting the stage
+<a class=heading-link href=#introduction-setting-the-stage><i class="fa fa-link" aria-hidden=true></i></a></h2><p><em>We should start with an overall picture of an imaginary Enterprise network</em></p><p><strong>Imagine that your ADFS is sitting behind the corporate firewall and your users cannot access it from the Internet without VPN.</strong></p><p>Now continue.. <strong>Imagine that your company is using Office 365</strong> (or Microsoft 365) <strong>with Federated Authentication which requires access to that ADFS server which is not accessible from anywhere except your company network.</strong></p><p>Just to keep things interested.. <strong>Imagine that your users have to use Smart Cards to logon into their workstations</strong> and this gives you Multi-factor Authentication.</p><p>Finally just to color the picture.. <strong>Imagine that you&rsquo;re using Azure AD Privileged ID Management (PIM) from Privileged Admin Workstations.</strong> But the regular user base has access to different Azure subscriptions running different part of your Corporate environment in the Cloud.</p><p>I&rsquo;d say that we created a pretty good situation here from the security standpoint and a quite common one from the usage standpoint.</p><h2 id=innovation-happens>Innovation happens
+<a class=heading-link href=#innovation-happens><i class="fa fa-link" aria-hidden=true></i></a></h2><p><em>In this section I&rsquo;m trying to give you a picture about Microsoft&rsquo;s innovation</em></p><p>In the past, before 2016 (give or take), our options to access and administer Azure were the <a href=https://portal.azure.com>Portal</a>, the Azure PowerShell module and Visual Studio. But slowly Microsoft is releasing new tools to help us with our jobs.</p><p>Today we can use Azure App on our mobile devices, the <strong>Azure Cloud Shell</strong> in our browsers to create and manage resources and we can use the <strong>Azure CLI</strong> as well - which is a cross platform command line interface - running on most of the Operating Systems.</p><p>With these new tools we have new ways to do and automate our jobs and these tools use newer technologies under their hood.</p><h2 id=new-technologies>New technologies
+<a class=heading-link href=#new-technologies><i class="fa fa-link" aria-hidden=true></i></a></h2><p>One of these new technology is part of oAuth which helps with Authentication.</p><h3 id=authentication-with-azure-cloud-shell>Authentication with Azure Cloud Shell
+<a class=heading-link href=#authentication-with-azure-cloud-shell><i class="fa fa-link" aria-hidden=true></i></a></h3><p>When you open the Azure Cloud Shell it uses your browser&rsquo;s session to authenticate you seamlessly, you just have to wait a couple of seconds and you can start using it</p><p><img src=/content/images/2019/02/azure-cloud-shell.png-1.jpg alt=azure-cloud-shell.png-1></p><p>The Azure Cloud Shell in the background is an Ubuntu Linux virtual machine running in Azure and it comes with the Azure CLI pre-installed as you can see it in the picture above.</p><h3 id=authentication-with-azure-cli>Authentication with Azure CLI
+<a class=heading-link href=#authentication-with-azure-cli><i class="fa fa-link" aria-hidden=true></i></a></h3><p>We have a couple of options authenticating with the Azure CLI and because of the SSO we can skip the the authentication in the browser.</p><p><img src=/content/images/2019/02/az-login-h.jpg alt=az-login-h></p><p>But from Azure CLI running on your machine you&rsquo;ve to authenticate somehow, which is easy because using the <code>az login</code> command your browser will open where you can sign-in.</p><p><img src=/content/images/2019/02/az-login.jpg alt=az-login></p><p>But if you&rsquo;re on a device without a browser or you want to connect to a different subscription from Azure Cloud Shell you need to use device code flow option:
+<code>az login --use-device-code</code></p><h3 id=device-code-flow>Device Code Flow
+<a class=heading-link href=#device-code-flow><i class="fa fa-link" aria-hidden=true></i></a></h3><p>On devices where the interactive login process isn&rsquo;t available the Device Code Flow lets you authenticate using a different machine and providing a generated code from the console session.</p><p>In the below picture try to imagine that the PowerShell console is running on a different machine where the only option to authenticate is the Device Code Flow.</p><figure><img src=/images/2019/02/az-login-device-code.jpg></figure><h2 id=where-are-we-going-with-this>Where are we going with this?
+<a class=heading-link href=#where-are-we-going-with-this><i class="fa fa-link" aria-hidden=true></i></a></h2><p>I hope you&rsquo;re still here, because this is the point where this post is starting to be interesting - at least for me.</p><p>In our situation that we all imagined a couple of minutes ago&mldr; We&rsquo;d a stong dependenicy on our corporate network because we needed to use our ADFS service to authenticate, right? Right.</p><blockquote><p><em>Did you realize that the Azure Cloud Shell is actually not running on your company network?</em></p></blockquote><p>That&rsquo;s right. You&rsquo;re entry point is the browser running on your machine and exposing your browser&rsquo;s session to Azure Cloud Shell. Realizing this took me some time, so it&rsquo;s completly OK to learn this just now!</p><p><strong>The question: Can we use Azure CLI from the anywhere on internet to access our Azure resources, including Azure AD?</strong></p><p><strong>Yes, we can!</strong> <em>Reminder, this is the point where you need to talk to your manager before you do something which isn&rsquo;t allowed by your company.</em></p><h2 id=exposures>Exposures
+<a class=heading-link href=#exposures><i class="fa fa-link" aria-hidden=true></i></a></h2><h3 id=general-exposure>General Exposure
+<a class=heading-link href=#general-exposure><i class="fa fa-link" aria-hidden=true></i></a></h3><p>When you&rsquo;re using the Azure CLI you&rsquo;ll have the same level of access to all resources in Azure what you&rsquo;d have using the Azure portal from your machine connected to the company network.</p><blockquote><p>If you&rsquo;ve owner level of access to a subscription you&rsquo;ll have owner level of access and you can do anything with that subscription.</p></blockquote><p>In case you&rsquo;re allowed to use the Azure CLI from the Internet you&rsquo;ve to make sure your threat model is ready to deal with this situation.</p><h3 id=attack-vector-i>Attack vector I.
+<a class=heading-link href=#attack-vector-i><i class="fa fa-link" aria-hidden=true></i></a></h3><p>A different exposure or we can say attack vector is when someone creates a rouge Azure CLI version and starts distributing it, and with this malicious version when you initiate a connection, the Rouge CLI could connect to a C&C server and initiate a rouge connection from that C&C machine and give back the device code your Rouge CLI to show you. So when you&rsquo;re authenticating in your browser you&rsquo;re actually letting the C&C server in into your Azure Subscriptions with your access level.</p><h3 id=attack-vector-ii>Attack vector II.
+<a class=heading-link href=#attack-vector-ii><i class="fa fa-link" aria-hidden=true></i></a></h3><p>The Azure CLI is caching the session token in your file system using encryption. If an attacker can extract your session token and decrypt it then you&rsquo;ll be having a really bad day.</p><h2 id=mitigation>Mitigation
+<a class=heading-link href=#mitigation><i class="fa fa-link" aria-hidden=true></i></a></h2><p>So far I didn&rsquo;t find anything. I&rsquo;m not sure if we can prevent the usage of the Azure CLI and even if we can prevent it then we&rsquo;d probably mess some things up with the Azure Cloud Shell as well.
+<em>If I learn anything useful in the future I&rsquo;ll update this post.</em></p><h2 id=the-whole-process>The whole process
+<a class=heading-link href=#the-whole-process><i class="fa fa-link" aria-hidden=true></i></a></h2><p>You&rsquo;ll need at least two machines with Internet connection, one of them has to be located on the company network so you could access you ADFS server.</p><ol><li>On the remote machine use the Azure CLI and the Device Code Flow to initiate a login process <code>az login --use-device-code</code> this will generate the required code.</li><li>On the company network connected machine open <a href=https://microsoft.com/devicelogin>https://microsoft.com/devicelogin</a> and enter the code from the remote machine to authenticate.</li><li>On the remote machine the you&rsquo;ll gain access the Azure.</li></ol></article></section></div><footer class=footer><section class=container>©
 2019 -
 2022
 David Sass
 ·
-Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
-</section>
-</footer>
-</main>
-<script src=/js/coder.min.39a51230dce2ac866c049b52573e38bf60666af4bc63c1bdf203b9b2d95b1cd6.js integrity="sha256-OaUSMNzirIZsBJtSVz44v2BmavS8Y8G98gO5stlbHNY="></script>
-</body>
-</html>
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=/js/coder.min.9cf2dbf9b6989ef8eae941ffb4231c26d1dc026bca38f1d19fdba50177d8a9ac.js integrity="sha256-nPLb+baYnvjq6UH/tCMcJtHcAmvKOPHRn9ulAXfYqaw="></script></body></html>
