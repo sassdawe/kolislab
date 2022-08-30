@@ -1,14 +1,21 @@
-+++
-author = "David Sass"
-categories = ["Azure", "DevOps", "Azure DevOps", "Governance"]
-date = 2020-09-06T13:10:25Z
-description = ""
-draft = true
-slug = "azure-devops-governance"
-tags = ["Azure", "DevOps", "Azure DevOps", "Governance"]
-title = "Azure DevOps Governance"
-
-+++
+---
+author: David Sass
+categories:
+- Azure
+- DevOps
+- Azure DevOps
+- Governance
+date: "2020-09-06T13:10:25Z"
+description: ""
+draft: true
+slug: azure-devops-governance
+tags:
+- Azure
+- DevOps
+- Azure DevOps
+- Governance
+title: Azure DevOps Governance
+---
 
 
 Without governance one can find itself in a huge mess.

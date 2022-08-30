@@ -1,16 +1,26 @@
-+++
-author = "David Sass"
-categories = ["Microsoft Graph", "Graph", "AzureAD", "PowerShell", "BYOT"]
-date = 2021-06-28T05:46:22Z
-description = ""
-draft = false
-image = "__GHOST_URL__/content/images/2021/06/2021-06-27-193228.png"
-slug = "mggraph-azuread-part1"
-summary = "Best practices using the Microsoft Graph PowerShell SDK to for AzureAD automation, part 1. "
-tags = ["Microsoft Graph", "Graph", "AzureAD", "PowerShell", "BYOT"]
-title = "Microsoft Graph PowerShell SDK for Azure AD - Part 1"
-
-+++
+---
+author: David Sass
+categories:
+- Microsoft Graph
+- Graph
+- AzureAD
+- PowerShell
+- BYOT
+date: "2021-06-28T05:46:22Z"
+description: ""
+draft: false
+image: __GHOST_URL__/content/images/2021/06/2021-06-27-193228.png
+slug: mggraph-azuread-part1
+summary: 'Best practices using the Microsoft Graph PowerShell SDK to for AzureAD automation,
+  part 1. '
+tags:
+- Microsoft Graph
+- Graph
+- AzureAD
+- PowerShell
+- BYOT
+title: Microsoft Graph PowerShell SDK for Azure AD - Part 1
+---
 
 
 Microsoft Graph is vast, and it isn't just about **AzureAD**, Microsoft Graph is about everything (except maybe Azure DevOps...). And when we only want to work with **AzureAD** we really need to be specific about which parts of the SDK we want to download and use.

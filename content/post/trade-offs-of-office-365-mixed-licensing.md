@@ -1,12 +1,11 @@
-+++
-author = "David Sass"
-date = 2019-01-13T18:11:07Z
-description = ""
-draft = true
-slug = "trade-offs-of-office-365-mixed-licensing"
-title = "Trade offs of Office 365 mixed licensing"
-
-+++
+---
+author: David Sass
+date: "2019-01-13T18:11:07Z"
+description: ""
+draft: true
+slug: trade-offs-of-office-365-mixed-licensing
+title: Trade offs of Office 365 mixed licensing
+---
 
 
 You probably think that you can save money using mixed licenses for Office 365. You don't know what am I talking about?

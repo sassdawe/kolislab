@@ -1,14 +1,25 @@
-+++
-author = "David Sass"
-categories = ["Office365", "PnP", "PowerShell", "Docker", "CLI", "Office365-CLI"]
-date = 2018-06-06T21:23:00Z
-description = ""
-draft = false
-slug = "office365-cli-in-a-nano-server-container"
-tags = ["Office365", "PnP", "PowerShell", "Docker", "CLI", "Office365-CLI"]
-title = "Office365-CLI in a Nano Server Container"
-
-+++
+---
+author: David Sass
+categories:
+- Office365
+- PnP
+- PowerShell
+- Docker
+- CLI
+- Office365-CLI
+date: "2018-06-06T21:23:00Z"
+description: ""
+draft: false
+slug: office365-cli-in-a-nano-server-container
+tags:
+- Office365
+- PnP
+- PowerShell
+- Docker
+- CLI
+- Office365-CLI
+title: Office365-CLI in a Nano Server Container
+---
 
 
 I'm in general interested in everything [OfficeDevPnP](https://aka.ms/officedevpnp) but I'm not a developer. I like to think that I'm a Hacker, the old school *"do something which wasn't designed"* type of hacker.

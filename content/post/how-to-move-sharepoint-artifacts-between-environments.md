@@ -1,12 +1,11 @@
-+++
-author = "David Sass"
-date = 2019-01-13T18:13:02Z
-description = ""
-draft = true
-slug = "how-to-move-sharepoint-artifacts-between-environments"
-title = "How to move SharePoint Artifacts between environments"
-
-+++
+---
+author: David Sass
+date: "2019-01-13T18:13:02Z"
+description: ""
+draft: true
+slug: how-to-move-sharepoint-artifacts-between-environments
+title: How to move SharePoint Artifacts between environments
+---
 
 
 You need to move SharePoint Artifacts between Dev, UAT and Production but you don't know how to start and what tools can be used in which situation?

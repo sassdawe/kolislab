@@ -1,16 +1,30 @@
-+++
-author = "David Sass"
-categories = ["AzureAD", "Admin", "PowerShell", "Hyper-V", "localgroup", "Local Group", "Add-LocalGroupMember"]
-date = 2020-05-02T10:29:20Z
-description = ""
-draft = false
-image = "/images/2020/05/Hyper-V-Administratiors.png"
-slug = "manage-local-groups-on-azure-ad-joined-machines"
-summary = "Get-VM : You do not have the required permission to complete this task. Let's fix that using Add-LocalGroupMember on our Azure AD joined device."
-tags = ["AzureAD", "Admin", "PowerShell", "Hyper-V", "localgroup", "Local Group", "Add-LocalGroupMember"]
-title = "How to manage Hyper-V Administrators on Azure AD joined machines"
-
-+++
+---
+author: David Sass
+categories:
+- AzureAD
+- Admin
+- PowerShell
+- Hyper-V
+- localgroup
+- Local Group
+- Add-LocalGroupMember
+date: "2020-05-02T10:29:20Z"
+description: ""
+draft: false
+image: /images/2020/05/Hyper-V-Administratiors.png
+slug: manage-local-groups-on-azure-ad-joined-machines
+summary: 'Get-VM : You do not have the required permission to complete this task.
+  Let''s fix that using Add-LocalGroupMember on our Azure AD joined device.'
+tags:
+- AzureAD
+- Admin
+- PowerShell
+- Hyper-V
+- localgroup
+- Local Group
+- Add-LocalGroupMember
+title: How to manage Hyper-V Administrators on Azure AD joined machines
+---
 
 
 Today's blog post we'll have a look at the use case where we've an **Azure AD** joined Windows 10 device with the **Hyper-V** role installed, and we don't want to bother elevating our PowerShell console every time to manage our virtual machines. Or to put it more bluntly get rid of this error message:

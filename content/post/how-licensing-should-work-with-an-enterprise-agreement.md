@@ -1,12 +1,11 @@
-+++
-author = "David Sass"
-date = 2019-07-16T20:34:02Z
-description = ""
-draft = true
-slug = "how-licensing-should-work-with-an-enterprise-agreement"
-title = "How Office 365 licensing should work"
-
-+++
+---
+author: David Sass
+date: "2019-07-16T20:34:02Z"
+description: ""
+draft: true
+slug: how-licensing-should-work-with-an-enterprise-agreement
+title: How Office 365 licensing should work
+---
 
 
 I'm an Office 365 E1 subscriber for personal use and there is one thing which isn't ideal with Office 365 and that is the licensing. Let me describe my situation.

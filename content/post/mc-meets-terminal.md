@@ -1,16 +1,23 @@
-+++
-author = "David Sass"
-categories = ["Windows Terminal", "Terminal", "MC", "Howto"]
-date = 2021-04-24T14:44:35Z
-description = ""
-draft = false
-image = "__GHOST_URL__/content/images/2021/04/terminal-mc.png"
-slug = "mc-meets-terminal"
-summary = "Install and add Midnight Commander (MC) to Windows Terminal."
-tags = ["Windows Terminal", "Terminal", "MC", "Howto"]
-title = "Midnight Commander meets Windows Terminal"
-
-+++
+---
+author: David Sass
+categories:
+- Windows Terminal
+- Terminal
+- MC
+- Howto
+date: "2021-04-24T14:44:35Z"
+description: ""
+draft: false
+image: __GHOST_URL__/content/images/2021/04/terminal-mc.png
+slug: mc-meets-terminal
+summary: Install and add Midnight Commander (MC) to Windows Terminal.
+tags:
+- Windows Terminal
+- Terminal
+- MC
+- Howto
+title: Midnight Commander meets Windows Terminal
+---
 
 
 Those of us who were born into the DOS era probably all used Norton Commander (NC), the famous blue-white two panel file manager. Of course, NC is long gone, but is has a clone called [Midnight Commander](https://github.com/MidnightCommander/mc) or MC for sort, created by [Miguel de Icaza](https://en.wikipedia.org/wiki/Miguel_de_Icaza). Let's look at how can we install MC on Windows these days.

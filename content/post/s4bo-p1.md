@@ -1,16 +1,26 @@
-+++
-author = "David Sass"
-categories = ["MicrosoftTeams", "Teams", "Microsoft Teams", "Skype", "Skype for Business"]
-date = 2021-08-15T19:10:12Z
-description = ""
-draft = false
-image = "__GHOST_URL__/content/images/2021/08/5jotu1.jpg"
-slug = "s4bo-p1"
-summary = "Skype for Business Online is gone now and left a gap while Microsoft Teams might be too much to fill said gap. Have a look!"
-tags = ["MicrosoftTeams", "Teams", "Microsoft Teams", "Skype", "Skype for Business"]
-title = "Skype for Business is gone (part 1)"
-
-+++
+---
+author: David Sass
+categories:
+- MicrosoftTeams
+- Teams
+- Microsoft Teams
+- Skype
+- Skype for Business
+date: "2021-08-15T19:10:12Z"
+description: ""
+draft: false
+image: __GHOST_URL__/content/images/2021/08/5jotu1.jpg
+slug: s4bo-p1
+summary: Skype for Business Online is gone now and left a gap while Microsoft Teams
+  might be too much to fill said gap. Have a look!
+tags:
+- MicrosoftTeams
+- Teams
+- Microsoft Teams
+- Skype
+- Skype for Business
+title: Skype for Business is gone (part 1)
+---
 
 
 Microsoft has/had a sometimes loved sometimes hated unified communication platform called many things through the years, currently Skype for Business. It had its own evolution and was renamed many times, as almost any other product from Microsoft. But finally, a new service called Microsoft Teams emerged, which has taken over the unified communication, and collaboration domain.

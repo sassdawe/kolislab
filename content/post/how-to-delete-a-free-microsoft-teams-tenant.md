@@ -1,13 +1,12 @@
-+++
-author = "David Sass"
-date = 2019-11-21T19:27:55Z
-description = ""
-draft = true
-image = "/images/2019/11/Annotation-2019-11-21-211954.jpg"
-slug = "how-to-delete-a-free-microsoft-teams-tenant"
-title = "How to delete a Free Microsoft Teams Tenant"
-
-+++
+---
+author: David Sass
+date: "2019-11-21T19:27:55Z"
+description: ""
+draft: true
+image: /images/2019/11/Annotation-2019-11-21-211954.jpg
+slug: how-to-delete-a-free-microsoft-teams-tenant
+title: How to delete a Free Microsoft Teams Tenant
+---
 
 
 Sometimes you have to do some housekeeping and delete the Tenants you don't need anymore. But in some rare cases - especially with the free Microsoft Teams offering - you might run into some challenges as I did.

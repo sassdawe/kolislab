@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on kolislab</title>
+    <link>http://kolislab.com/categories/about/</link>
+    <description>Recent content in About on kolislab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 03 May 2018 21:09:00 +0000</lastBuildDate><atom:link href="http://kolislab.com/categories/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://kolislab.com/post/about/</link>
+      <pubDate>Thu, 03 May 2018 21:09:00 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/about/</guid>
+      <description>My name is David Sass and this is my professional blog.
+I spent the all my career around Microsoft technologies, mostly with SharePoint Server. I was a one man Stable team for a couple of years. - Why? Because the Hungarian companies sometimes like to put everything on one man especially when there is not enough IT Professional on the market.
+During those years I managed to meet all kinds of challenges in the SharePoint space - we all know the developers and the crazy expectations of the project managers, right?</description>
+    </item>
+    
+  </channel>
+</rss>

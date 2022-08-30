@@ -1,15 +1,20 @@
-+++
-author = "David Sass"
-categories = ["Tenant", "BYOT", "FUN"]
-date = 2021-04-18T10:38:38Z
-description = ""
-draft = false
-slug = "bring-your-own-tenant"
-summary = "It works in my tenant."
-tags = ["Tenant", "BYOT", "FUN"]
-title = "Bring Your Own Tenant (updated)"
-
-+++
+---
+author: David Sass
+categories:
+- Tenant
+- BYOT
+- FUN
+date: "2021-04-18T10:38:38Z"
+description: ""
+draft: false
+slug: bring-your-own-tenant
+summary: It works in my tenant.
+tags:
+- Tenant
+- BYOT
+- FUN
+title: Bring Your Own Tenant (updated)
+---
 
 
 BYOT is a new concept I learned while I was listening to the [M365 Dev Podcast](https://m365devpodcast.com/).

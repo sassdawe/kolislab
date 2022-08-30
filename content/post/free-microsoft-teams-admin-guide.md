@@ -1,14 +1,25 @@
-+++
-author = "David Sass"
-categories = ["MicrosoftTeams", "AzureAD", "Office365", "Admin", "MFA", "Check list"]
-date = 2020-03-06T22:10:00Z
-description = ""
-draft = false
-slug = "free-microsoft-teams-admin-guide"
-tags = ["MicrosoftTeams", "AzureAD", "Office365", "Admin", "MFA", "Check list"]
-title = "Admin Guide for your Free Microsoft Teams Subscription (Updated)"
-
-+++
+---
+author: David Sass
+categories:
+- MicrosoftTeams
+- AzureAD
+- Office365
+- Admin
+- MFA
+- Check list
+date: "2020-03-06T22:10:00Z"
+description: ""
+draft: false
+slug: free-microsoft-teams-admin-guide
+tags:
+- MicrosoftTeams
+- AzureAD
+- Office365
+- Admin
+- MFA
+- Check list
+title: Admin Guide for your Free Microsoft Teams Subscription (Updated)
+---
 
 
 

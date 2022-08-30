@@ -1,12 +1,11 @@
-+++
-author = "David Sass"
-date = 2019-01-13T18:06:24Z
-description = ""
-draft = true
-slug = "state-of-office-365-management-with-powershell"
-title = "State of Office 365 management with PowerShell"
-
-+++
+---
+author: David Sass
+date: "2019-01-13T18:06:24Z"
+description: ""
+draft: true
+slug: state-of-office-365-management-with-powershell
+title: State of Office 365 management with PowerShell
+---
 
 
 These days if you want go manage Office 365 and I mean really manage it, manage the small services as well and not just the licensing and the main pillars, you need to use a handful of different PowerShell modules.

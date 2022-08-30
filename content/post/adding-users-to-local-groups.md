@@ -1,15 +1,20 @@
-+++
-author = "David Sass"
-categories = ["PowerShell", "OneLiner", "Security"]
-date = 2018-10-29T05:59:00Z
-description = ""
-draft = false
-image = "/images/2018/12/2018-10-29.png"
-slug = "adding-users-to-local-groups"
-tags = ["PowerShell", "OneLiner", "Security"]
-title = "Adding Users to Local Groups"
-
-+++
+---
+author: David Sass
+categories:
+- PowerShell
+- OneLiner
+- Security
+date: "2018-10-29T05:59:00Z"
+description: ""
+draft: false
+image: /images/2018/12/2018-10-29.png
+slug: adding-users-to-local-groups
+tags:
+- PowerShell
+- OneLiner
+- Security
+title: Adding Users to Local Groups
+---
 
 
 I've been playing with the new SharePoint Server 2019 in the last  couple of days and after I joined my new VM to the Domain I needed to  add my SP_SETUP account to the local Administrators group but I didn't want to log in with my Domain Admin to the server.

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AzureAD on kolislab</title>
+    <link>http://kolislab.com/tags/azuread/</link>
+    <description>Recent content in AzureAD on kolislab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 28 Jun 2021 05:46:22 +0000</lastBuildDate><atom:link href="http://kolislab.com/tags/azuread/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Graph PowerShell SDK for Azure AD - Part 1</title>
+      <link>http://kolislab.com/post/mggraph-azuread-part1/</link>
+      <pubDate>Mon, 28 Jun 2021 05:46:22 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/mggraph-azuread-part1/</guid>
+      <description>Best practices using the Microsoft Graph PowerShell SDK to for AzureAD automation, part 1.</description>
+    </item>
+    
+    <item>
+      <title>Hyper-V, Windows 10, PowerShell</title>
+      <link>http://kolislab.com/post/hyper-v-windows-10-powershell/</link>
+      <pubDate>Thu, 05 Nov 2020 22:33:51 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/hyper-v-windows-10-powershell/</guid>
+      <description>Add-LocalGroupMember -Group &amp;ldquo;Hyper-V Administrators&amp;rdquo; -Member &amp;ldquo;$(whoami)&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>How to manage Hyper-V Administrators on Azure AD joined machines</title>
+      <link>http://kolislab.com/post/manage-local-groups-on-azure-ad-joined-machines/</link>
+      <pubDate>Sat, 02 May 2020 10:29:20 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/manage-local-groups-on-azure-ad-joined-machines/</guid>
+      <description>Get-VM : You do not have the required permission to complete this task. Let&amp;rsquo;s fix that using Add-LocalGroupMember on our Azure AD joined device.</description>
+    </item>
+    
+    <item>
+      <title>Admin Guide for your Free Microsoft Teams Subscription (Updated)</title>
+      <link>http://kolislab.com/post/free-microsoft-teams-admin-guide/</link>
+      <pubDate>Fri, 06 Mar 2020 22:10:00 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/free-microsoft-teams-admin-guide/</guid>
+      <description>Microsoft Teams - The Admin&amp;rsquo;s Check List What do you want to do is to make sure that you&amp;rsquo;ve completed the following checklist:
+You&amp;rsquo;re highly encouraged to create additional Global Admin accounts. You&amp;rsquo;re highly encouraged to turn on the Multi-Factor Authentication for the Admin accounts. You&amp;rsquo;re highly encouraged to change the default technical contact to a distribution group. You&amp;rsquo;re highly encouraged to update the Privacy Contact information. You&amp;rsquo;re highly encouraged to turn on the Auditing.</description>
+    </item>
+    
+    <item>
+      <title>Practical guide to manage the PAW machines</title>
+      <link>http://kolislab.com/post/paw-practical-guide/</link>
+      <pubDate>Sun, 26 May 2019 14:22:22 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/paw-practical-guide/</guid>
+      <description>Where we are We already have some quality materials - like the Microsoft Cybersecurity Reference Architecture - about the security best practices of the Azure Cloud including possibly everything related to Cybersecurity but I feel that something is missing and I&amp;rsquo;ll tell you why in a moment. If you take a closer look at the reference material you&amp;rsquo;ll see a red bar titled: Privileged Admin Workstations (PAWs) and in the right side of that bar you&amp;rsquo;ll see ESAE Admin Forest which is described here ESAE Administrative Forest Design Approach</description>
+    </item>
+    
+    <item>
+      <title>Running Azure AD Pro Tip #1</title>
+      <link>http://kolislab.com/post/azops-pro-tip-1/</link>
+      <pubDate>Sat, 11 May 2019 18:20:00 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/azops-pro-tip-1/</guid>
+      <description>Set up your system in a way which will allow you to receive incoming emails.
+Use case #1: Invitations Your users might be invited into a different Tenant to access resources. To accept these invitations - which will arrive in email form - you&amp;rsquo;ve to receive these invitation emails.
+Azure AD - New guest user
+Use case #2: Official communications You might get into a situation where you want to purchase one or more HTTPS certificates to run your services with your own domain name and not just with the standard https://something.</description>
+    </item>
+    
+    <item>
+      <title>Free Microsoft Teams and what&#39;s behind</title>
+      <link>http://kolislab.com/post/free-microsoft-teams-and-whats-behind/</link>
+      <pubDate>Thu, 19 Jul 2018 06:44:00 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/free-microsoft-teams-and-whats-behind/</guid>
+      <description>Microsoft Teams is here - for Free The offering was designed to small business and groups of co-workers that don’t have commercial Office 365 subscriptions. You can read the official announcement on the Microsoft Teams Blog
+How to get it? Using the http://office.com/teams link, you will be redirected to the right page where you can sign-up for the free service. You can even use your existing Microsoft Account (MSA for sort) to register.</description>
+    </item>
+    
+  </channel>
+</rss>

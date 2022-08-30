@@ -1,15 +1,28 @@
-+++
-author = "David Sass"
-categories = ["Azure", "Azure CLI", "Cloud Shell", "PowerShell", "Shell", "Red Team", "Security"]
-date = 2019-02-12T06:00:00Z
-description = ""
-draft = false
-image = "/images/2019/02/az-2.jpg"
-slug = "access-to-azure-from-anywhere"
-tags = ["Azure", "Azure CLI", "Cloud Shell", "PowerShell", "Shell", "Red Team", "Security"]
-title = "Red Team type of Access to Azure from Anywhere"
-
-+++
+---
+author: David Sass
+categories:
+- Azure
+- Azure CLI
+- Cloud Shell
+- PowerShell
+- Shell
+- Red Team
+- Security
+date: "2019-02-12T06:00:00Z"
+description: ""
+draft: false
+image: /images/2019/02/az-2.jpg
+slug: access-to-azure-from-anywhere
+tags:
+- Azure
+- Azure CLI
+- Cloud Shell
+- PowerShell
+- Shell
+- Red Team
+- Security
+title: Red Team type of Access to Azure from Anywhere
+---
 
 
 ## ! Warning !

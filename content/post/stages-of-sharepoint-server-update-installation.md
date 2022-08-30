@@ -1,12 +1,11 @@
-+++
-author = "David Sass"
-date = 2019-01-13T18:04:59Z
-description = ""
-draft = true
-slug = "stages-of-sharepoint-server-update-installation"
-title = "Stages of SharePoint Server Update Installation"
-
-+++
+---
+author: David Sass
+date: "2019-01-13T18:04:59Z"
+description: ""
+draft: true
+slug: stages-of-sharepoint-server-update-installation
+title: Stages of SharePoint Server Update Installation
+---
 
 
 In the world of the SharePoint CU updates we can distinct a couple of stages during the installation process.

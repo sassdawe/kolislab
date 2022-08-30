@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GDPR on kolislab</title>
+    <link>http://kolislab.com/categories/gdpr/</link>
+    <description>Recent content in GDPR on kolislab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 Feb 2019 22:24:52 +0000</lastBuildDate><atom:link href="http://kolislab.com/categories/gdpr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Azure Compliance Manager</title>
+      <link>http://kolislab.com/post/msft-compliance-manager/</link>
+      <pubDate>Sun, 03 Feb 2019 22:24:52 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/msft-compliance-manager/</guid>
+      <description>As you probably know Microsoft has a Service Trust Portal from where you can get the #Compliance related information for all Microsoft cloud cervices.
+You can even download the Security and Compliance Blueprints
+Compliance Manager One of the most helpful offering of the Service Trust Portal is the Compliance Manager, a workflow-based risk assessment tool in which you can get a good overview of your Compliance score which will reflect on how Microsoft understood the different regulations/certifications and the controls required to meet the requirements of these.</description>
+    </item>
+    
+    <item>
+      <title>How do I vet the third party applications</title>
+      <link>http://kolislab.com/post/vet-the-apps/</link>
+      <pubDate>Sat, 19 Jan 2019 20:08:17 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/vet-the-apps/</guid>
+      <description>There are lots of third party software vendors focusing on applications and services to extend the functionality of Office 365. There is even a marketplace called AppSource where you can shop from these apps and services.
+There are hundreds of applications in each category from where you just have to pick those you like and add them to Office 365 but bare in mind that these apps will ask for permissions in the same way how apps are asking for permissions on your mobile device.</description>
+    </item>
+    
+    <item>
+      <title>Free Microsoft Teams and what&#39;s behind</title>
+      <link>http://kolislab.com/post/free-microsoft-teams-and-whats-behind/</link>
+      <pubDate>Thu, 19 Jul 2018 06:44:00 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/free-microsoft-teams-and-whats-behind/</guid>
+      <description>Microsoft Teams is here - for Free The offering was designed to small business and groups of co-workers that don’t have commercial Office 365 subscriptions. You can read the official announcement on the Microsoft Teams Blog
+How to get it? Using the http://office.com/teams link, you will be redirected to the right page where you can sign-up for the free service. You can even use your existing Microsoft Account (MSA for sort) to register.</description>
+    </item>
+    
+    <item>
+      <title>Changes to your Azure Information Protection configuration</title>
+      <link>http://kolislab.com/post/changes-to-your-azure-information-protection-configuration/</link>
+      <pubDate>Fri, 08 Jun 2018 18:41:00 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/changes-to-your-azure-information-protection-configuration/</guid>
+      <description>Plan for change
+We are making some changes to your Azure Information Protection (AIP) configuration. Starting July 1, 2018, we will be enabling the protection features in Azure Information Protection to customers with the eligible Office 365 licenses.
+During the fall of 2017 MSFT announced some features for Microsoft 365 to help their customers to meet the requirements of GDPR.
+The original announcement is located here: New Microsoft 365 features to accelerate GDPR compliance and this post is about this small part of the announcement:</description>
+    </item>
+    
+  </channel>
+</rss>

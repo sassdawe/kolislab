@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on kolislab</title>
+    <link>http://kolislab.com/categories/cloud/</link>
+    <description>Recent content in Cloud on kolislab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 13 Oct 2019 06:58:29 +0000</lastBuildDate><atom:link href="http://kolislab.com/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud Security &amp; Responsibility</title>
+      <link>http://kolislab.com/post/cloud-security-model/</link>
+      <pubDate>Sun, 13 Oct 2019 06:58:29 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/cloud-security-model/</guid>
+      <description>After seeing that some of us - if not most of us - is still able to mess up the configuration of the cloud hosted resources and therefor open up the possibility of some information disclosures, I thought that we need an updated diagram about our responsibilities.
+Updated Cloud Security Responsibility Model
+The yellow items are my addition, and they show where most of the challenges are located. For a &amp;ldquo;capability team&amp;rdquo; which never had to deal with virtual networks and access management of the resources before the cloud era, I believe these are the parts of the cloud where most of the learning is needed, and could have an epic failure.</description>
+    </item>
+    
+  </channel>
+</rss>

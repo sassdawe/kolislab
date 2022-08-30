@@ -1,15 +1,23 @@
-+++
-author = "David Sass"
-categories = ["Module", "PowerShell", "pwsh", "PSModulePath"]
-date = 2021-07-02T13:58:09Z
-description = ""
-draft = false
-slug = "module-for-all"
-summary = "Install a PowerShell module on Windows once and use it with both Windows PowerShell and PowerShell (core)"
-tags = ["Module", "PowerShell", "pwsh", "PSModulePath"]
-title = "Install Modules for both PowerShell editions"
-
-+++
+---
+author: David Sass
+categories:
+- Module
+- PowerShell
+- pwsh
+- PSModulePath
+date: "2021-07-02T13:58:09Z"
+description: ""
+draft: false
+slug: module-for-all
+summary: Install a PowerShell module on Windows once and use it with both Windows
+  PowerShell and PowerShell (core)
+tags:
+- Module
+- PowerShell
+- pwsh
+- PSModulePath
+title: Install Modules for both PowerShell editions
+---
 
 
 We have two PowerShell editions what we could use on Windows, these are **Windows PowerShell** and **PowerShell** (_Core)._ Now one of the challenges we face with the two editions comes from where they store the installed PowerShell modules. Depending on the folder, it's possible that we need to install a module twice and that means we'll need to keep both versions up-to-date independently from each other. **But there is a solution for this challenge!**

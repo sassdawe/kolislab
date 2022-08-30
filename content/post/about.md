@@ -1,14 +1,15 @@
-+++
-author = "David Sass"
-categories = ["About"]
-date = 2018-05-03T21:09:00Z
-description = ""
-draft = false
-slug = "about"
-tags = ["About"]
-title = "About"
-
-+++
+---
+author: David Sass
+categories:
+- About
+date: "2018-05-03T21:09:00Z"
+description: ""
+draft: false
+slug: about
+tags:
+- About
+title: About
+---
 
 
 My name is David Sass and this is my professional blog.

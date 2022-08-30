@@ -1,15 +1,25 @@
-+++
-author = "David Sass"
-categories = ["Windows PowerShell", "PowerShell", "Module", "Snap-in", "video"]
-date = 2021-08-07T12:04:00Z
-description = ""
-draft = false
-slug = "wrapping-snap-ins-into-modules"
-summary = "Windows PowerShell snap-ins wrapped into modules will give us module auto-loading for the snap-ins."
-tags = ["Windows PowerShell", "PowerShell", "Module", "Snap-in", "video"]
-title = "Wrapping snap-ins into modules"
-
-+++
+---
+author: David Sass
+categories:
+- Windows PowerShell
+- PowerShell
+- Module
+- Snap-in
+- video
+date: "2021-08-07T12:04:00Z"
+description: ""
+draft: false
+slug: wrapping-snap-ins-into-modules
+summary: Windows PowerShell snap-ins wrapped into modules will give us module auto-loading
+  for the snap-ins.
+tags:
+- Windows PowerShell
+- PowerShell
+- Module
+- Snap-in
+- video
+title: Wrapping snap-ins into modules
+---
 
 
 With other words: the anatomy of the [SharePoint2019Commands](https://github.com/sassdawe/SharePoint2019Commands) PowerShell module.

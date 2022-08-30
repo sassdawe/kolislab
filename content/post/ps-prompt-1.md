@@ -1,15 +1,18 @@
-+++
-author = "David Sass"
-categories = ["PowerShell", "Prompt"]
-date = 2019-01-26T22:38:10Z
-description = ""
-draft = false
-image = "/images/2019/01/prompt.png.jpg"
-slug = "ps-prompt-1"
-tags = ["PowerShell", "Prompt"]
-title = "Show ♥ with PowerShell"
-
-+++
+---
+author: David Sass
+categories:
+- PowerShell
+- Prompt
+date: "2019-01-26T22:38:10Z"
+description: ""
+draft: false
+image: /images/2019/01/prompt.png.jpg
+slug: ps-prompt-1
+tags:
+- PowerShell
+- Prompt
+title: Show ♥ with PowerShell
+---
 
 
 I'm using a custom prompt within PowerShell to save space inside a console and place the current folder's path into the Title bar.

@@ -1,15 +1,24 @@
-+++
-author = "David Sass"
-categories = ["Compliance", "Microsoft Cloud", "Office365", "Azure", "GDPR"]
-date = 2019-02-03T22:24:52Z
-description = ""
-draft = false
-image = "/images/2019/02/compliance-manager-tour.jpg"
-slug = "msft-compliance-manager"
-tags = ["Compliance", "Microsoft Cloud", "Office365", "Azure", "GDPR"]
-title = "Microsoft Azure Compliance Manager"
-
-+++
+---
+author: David Sass
+categories:
+- Compliance
+- Microsoft Cloud
+- Office365
+- Azure
+- GDPR
+date: "2019-02-03T22:24:52Z"
+description: ""
+draft: false
+image: /images/2019/02/compliance-manager-tour.jpg
+slug: msft-compliance-manager
+tags:
+- Compliance
+- Microsoft Cloud
+- Office365
+- Azure
+- GDPR
+title: Microsoft Azure Compliance Manager
+---
 
 
 As you probably know **Microsoft** has a **[Service Trust Portal](https://servicetrust.microsoft.com/ViewPage/HomePage)** from where you can get the **#Compliance** related information for all Microsoft cloud cervices.

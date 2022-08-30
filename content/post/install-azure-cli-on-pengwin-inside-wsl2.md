@@ -1,16 +1,27 @@
-+++
-author = "David Sass"
-categories = ["Azure", "Azure CLI", "Pengwin", "WSL", "WSL2", "How to"]
-date = 2020-04-29T06:32:36Z
-description = ""
-draft = false
-image = "/images/2020/04/Annotation-2020-04-26-202912.png"
-slug = "install-azure-cli-on-pengwin-inside-wsl2"
-summary = "Steps to install Azure CLI on Pengwin inside WSL2"
-tags = ["Azure", "Azure CLI", "Pengwin", "WSL", "WSL2", "How to"]
-title = "Install Azure CLI on Pengwin inside WSL2"
-
-+++
+---
+author: David Sass
+categories:
+- Azure
+- Azure CLI
+- Pengwin
+- WSL
+- WSL2
+- How to
+date: "2020-04-29T06:32:36Z"
+description: ""
+draft: false
+image: /images/2020/04/Annotation-2020-04-26-202912.png
+slug: install-azure-cli-on-pengwin-inside-wsl2
+summary: Steps to install Azure CLI on Pengwin inside WSL2
+tags:
+- Azure
+- Azure CLI
+- Pengwin
+- WSL
+- WSL2
+- How to
+title: Install Azure CLI on Pengwin inside WSL2
+---
 
 
 To be honest, I didn't expect that I'll have to write this post when I started on my quest to get Azure CLI working in Pengwin. But here I'm sharing what I've learned. **#SharingIsCaring**

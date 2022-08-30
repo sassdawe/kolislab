@@ -1,15 +1,20 @@
-+++
-author = "David Sass"
-categories = ["MSDN", "Archive", "Back up"]
-date = 2019-04-12T06:34:00Z
-description = ""
-draft = false
-image = "/images/2019/04/msdn-blogs-gone-2.jpg"
-slug = "msdn-blogs-are-gone"
-tags = ["MSDN", "Archive", "Back up"]
-title = "MSDN blogs are back (UPDATED)"
-
-+++
+---
+author: David Sass
+categories:
+- MSDN
+- Archive
+- Back up
+date: "2019-04-12T06:34:00Z"
+description: ""
+draft: false
+image: /images/2019/04/msdn-blogs-gone-2.jpg
+slug: msdn-blogs-are-gone
+tags:
+- MSDN
+- Archive
+- Back up
+title: MSDN blogs are back (UPDATED)
+---
 
 
 > Microsoft has started to delete the blogs from MSDN. **[UPDATE]** 4/17/2019: Microsoft has restored the previously deactivated blogs. I suggest to save everything you find useful into OneNote and keep them forever!

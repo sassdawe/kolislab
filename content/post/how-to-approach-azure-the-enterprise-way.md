@@ -1,12 +1,11 @@
-+++
-author = "David Sass"
-date = 2019-02-02T16:42:28Z
-description = ""
-draft = true
-slug = "how-to-approach-azure-the-enterprise-way"
-title = "How to approach Azure, the Enterprise way (part 1)"
-
-+++
+---
+author: David Sass
+date: "2019-02-02T16:42:28Z"
+description: ""
+draft: true
+slug: how-to-approach-azure-the-enterprise-way
+title: How to approach Azure, the Enterprise way (part 1)
+---
 
 
 Microsoft does a really good job making it easy to get started with Azure which is perfect if you're an induvidual just wanting to learn or if you work for a small business where you don't have to follow any procurement process and you don't need to comply with regulations. 

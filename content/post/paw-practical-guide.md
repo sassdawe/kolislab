@@ -1,15 +1,26 @@
-+++
-author = "David Sass"
-categories = ["Azure", "AzureAD", "Security", "PAW", "Admin", "MFA"]
-date = 2019-05-26T14:22:22Z
-description = ""
-draft = false
-image = "/images/2019/05/__DEFCON-1.jpg"
-slug = "paw-practical-guide"
-tags = ["Azure", "AzureAD", "Security", "PAW", "Admin", "MFA"]
-title = "Practical guide to manage the PAW machines"
-
-+++
+---
+author: David Sass
+categories:
+- Azure
+- AzureAD
+- Security
+- PAW
+- Admin
+- MFA
+date: "2019-05-26T14:22:22Z"
+description: ""
+draft: false
+image: /images/2019/05/__DEFCON-1.jpg
+slug: paw-practical-guide
+tags:
+- Azure
+- AzureAD
+- Security
+- PAW
+- Admin
+- MFA
+title: Practical guide to manage the PAW machines
+---
 
 
 ## Where we are

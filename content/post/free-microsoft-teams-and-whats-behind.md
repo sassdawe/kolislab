@@ -1,15 +1,28 @@
-+++
-author = "David Sass"
-categories = ["GDPR", "Office365", "MicrosoftTeams", "Office365Lite", "AzureAD", "Security&Compliance", "Workaround"]
-date = 2018-07-19T06:44:00Z
-description = ""
-draft = false
-image = "/images/2018/12/teams-loadin.jpg"
-slug = "free-microsoft-teams-and-whats-behind"
-tags = ["GDPR", "Office365", "MicrosoftTeams", "Office365Lite", "AzureAD", "Security&Compliance", "Workaround"]
-title = "Free Microsoft Teams and what's behind"
-
-+++
+---
+author: David Sass
+categories:
+- GDPR
+- Office365
+- MicrosoftTeams
+- Office365Lite
+- AzureAD
+- Security&Compliance
+- Workaround
+date: "2018-07-19T06:44:00Z"
+description: ""
+draft: false
+image: /images/2018/12/teams-loadin.jpg
+slug: free-microsoft-teams-and-whats-behind
+tags:
+- GDPR
+- Office365
+- MicrosoftTeams
+- Office365Lite
+- AzureAD
+- Security&Compliance
+- Workaround
+title: Free Microsoft Teams and what's behind
+---
 
 
 ### Microsoft Teams is here - for Free

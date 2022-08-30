@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Get-Content on kolislab</title>
+    <link>http://kolislab.com/tags/get-content/</link>
+    <description>Recent content in Get-Content on kolislab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 27 Feb 2020 21:44:55 +0000</lastBuildDate><atom:link href="http://kolislab.com/tags/get-content/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerShell vs a really huge JSON file</title>
+      <link>http://kolislab.com/post/powershell-vs-large-json-file/</link>
+      <pubDate>Thu, 27 Feb 2020 21:44:55 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/powershell-vs-large-json-file/</guid>
+      <description>How to process a large json file and get its content out with PowerShell</description>
+    </item>
+    
+  </channel>
+</rss>

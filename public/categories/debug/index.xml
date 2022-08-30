@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>debug on kolislab</title>
+    <link>http://kolislab.com/categories/debug/</link>
+    <description>Recent content in debug on kolislab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 25 Jul 2021 12:41:00 +0000</lastBuildDate><atom:link href="http://kolislab.com/categories/debug/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rolling logs with PowerShell</title>
+      <link>http://kolislab.com/post/rolling-logs-with-powershell/</link>
+      <pubDate>Sun, 25 Jul 2021 12:41:00 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/rolling-logs-with-powershell/</guid>
+      <description>Rolling logs will help you understand what&amp;rsquo;s happening in your script, live.</description>
+    </item>
+    
+  </channel>
+</rss>

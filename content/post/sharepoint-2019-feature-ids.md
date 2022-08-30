@@ -1,15 +1,22 @@
-+++
-author = "David Sass"
-categories = ["SharePoint", "PowerShell", "FeatureID", "2019"]
-date = 2018-11-18T13:11:00Z
-description = ""
-draft = false
-image = "/images/2018/12/get-spfeature.png"
-slug = "sharepoint-2019-feature-ids"
-tags = ["SharePoint", "PowerShell", "FeatureID", "2019"]
-title = "SharePoint 2019 Feature IDs"
-
-+++
+---
+author: David Sass
+categories:
+- SharePoint
+- PowerShell
+- FeatureID
+- "2019"
+date: "2018-11-18T13:11:00Z"
+description: ""
+draft: false
+image: /images/2018/12/get-spfeature.png
+slug: sharepoint-2019-feature-ids
+tags:
+- SharePoint
+- PowerShell
+- FeatureID
+- "2019"
+title: SharePoint 2019 Feature IDs
+---
 
 
 When I work with **SharePoint Server** sometimes I need to validate if a **FeatureID** inside an error message is an Out of the Box ID in the current SharePoint version or it's a custom one created by a Developer.

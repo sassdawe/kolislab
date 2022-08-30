@@ -1,14 +1,19 @@
-+++
-author = "David Sass"
-categories = ["pluralsight", "free", "benefits"]
-date = 2018-04-26T19:27:00Z
-description = ""
-draft = false
-slug = "free-pluralsight-2"
-tags = ["pluralsight", "free", "benefits"]
-title = "3 months free Pluralsight"
-
-+++
+---
+author: David Sass
+categories:
+- pluralsight
+- free
+- benefits
+date: "2018-04-26T19:27:00Z"
+description: ""
+draft: false
+slug: free-pluralsight-2
+tags:
+- pluralsight
+- free
+- benefits
+title: 3 months free Pluralsight
+---
 
 
 ![Benefits](/content/images/2019/01/pluralsight-benefits.png)

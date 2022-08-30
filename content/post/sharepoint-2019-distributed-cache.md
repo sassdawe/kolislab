@@ -1,15 +1,24 @@
-+++
-author = "David Sass"
-categories = ["DistributedCache", "SharePoint", "2019", "Error", "PowerShell"]
-date = 2019-01-20T18:13:03Z
-description = ""
-draft = false
-image = "/images/2019/01/sps2019-dc-errors.png.jpg"
-slug = "sharepoint-2019-distributed-cache"
-tags = ["DistributedCache", "SharePoint", "2019", "Error", "PowerShell"]
-title = "SharePoint 2019 and Distributed Cache failure"
-
-+++
+---
+author: David Sass
+categories:
+- DistributedCache
+- SharePoint
+- "2019"
+- Error
+- PowerShell
+date: "2019-01-20T18:13:03Z"
+description: ""
+draft: false
+image: /images/2019/01/sps2019-dc-errors.png.jpg
+slug: sharepoint-2019-distributed-cache
+tags:
+- DistributedCache
+- SharePoint
+- "2019"
+- Error
+- PowerShell
+title: SharePoint 2019 and Distributed Cache failure
+---
 
 
 In some rare cases, right after the creation of a SharePoint 2019 farm, the Distributed Cache service could crash producing:

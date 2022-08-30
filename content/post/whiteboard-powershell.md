@@ -1,15 +1,20 @@
-+++
-author = "David Sass"
-categories = ["PowerShell", "Whiteboard", "Admin"]
-date = 2018-06-27T20:45:00Z
-description = ""
-draft = false
-image = "/images/2019/01/2018-07-05.png"
-slug = "whiteboard-powershell"
-tags = ["PowerShell", "Whiteboard", "Admin"]
-title = "Whiteboard PowerShell"
-
-+++
+---
+author: David Sass
+categories:
+- PowerShell
+- Whiteboard
+- Admin
+date: "2018-06-27T20:45:00Z"
+description: ""
+draft: false
+image: /images/2019/01/2018-07-05.png
+slug: whiteboard-powershell
+tags:
+- PowerShell
+- Whiteboard
+- Admin
+title: Whiteboard PowerShell
+---
 
 
 People leave the organization. They might retire or look for bigger challenges. Either way as an Office 365 Administrator you have to deal with the situation.

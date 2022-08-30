@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>localgroup on kolislab</title>
+    <link>http://kolislab.com/categories/localgroup/</link>
+    <description>Recent content in localgroup on kolislab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 May 2020 10:29:20 +0000</lastBuildDate><atom:link href="http://kolislab.com/categories/localgroup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to manage Hyper-V Administrators on Azure AD joined machines</title>
+      <link>http://kolislab.com/post/manage-local-groups-on-azure-ad-joined-machines/</link>
+      <pubDate>Sat, 02 May 2020 10:29:20 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/manage-local-groups-on-azure-ad-joined-machines/</guid>
+      <description>Get-VM : You do not have the required permission to complete this task. Let&amp;rsquo;s fix that using Add-LocalGroupMember on our Azure AD joined device.</description>
+    </item>
+    
+  </channel>
+</rss>

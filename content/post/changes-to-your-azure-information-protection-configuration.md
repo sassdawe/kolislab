@@ -1,14 +1,27 @@
-+++
-author = "David Sass"
-categories = ["Office365", "GDPR", "OME", "Azure Information Protection", "AIP", "Message encryption", "Exchange Online"]
-date = 2018-06-08T18:41:00Z
-description = ""
-draft = false
-slug = "changes-to-your-azure-information-protection-configuration"
-tags = ["Office365", "GDPR", "OME", "Azure Information Protection", "AIP", "Message encryption", "Exchange Online"]
-title = "Changes to your Azure Information Protection configuration"
-
-+++
+---
+author: David Sass
+categories:
+- Office365
+- GDPR
+- OME
+- Azure Information Protection
+- AIP
+- Message encryption
+- Exchange Online
+date: "2018-06-08T18:41:00Z"
+description: ""
+draft: false
+slug: changes-to-your-azure-information-protection-configuration
+tags:
+- Office365
+- GDPR
+- OME
+- Azure Information Protection
+- AIP
+- Message encryption
+- Exchange Online
+title: Changes to your Azure Information Protection configuration
+---
 
 
 > **Plan for change** 

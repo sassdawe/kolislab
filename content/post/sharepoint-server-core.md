@@ -1,14 +1,15 @@
-+++
-author = "David Sass"
-categories = ["SharePoint"]
-date = 2018-07-01T11:06:00Z
-description = ""
-draft = false
-slug = "sharepoint-server-core"
-tags = ["SharePoint"]
-title = "SharePoint Server Core"
-
-+++
+---
+author: David Sass
+categories:
+- SharePoint
+date: "2018-07-01T11:06:00Z"
+description: ""
+draft: false
+slug: sharepoint-server-core
+tags:
+- SharePoint
+title: SharePoint Server Core
+---
 
 
 `!IMPORTANT! This is not supported by Microsoft. Never do this in your production system.`

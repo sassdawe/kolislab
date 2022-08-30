@@ -1,16 +1,23 @@
-+++
-author = "David Sass"
-categories = ["Security", "Defender", "Server", "Windows"]
-date = 2020-06-07T15:32:59Z
-description = ""
-draft = false
-image = "/images/2020/06/defender-error.png"
-slug = "defender-on-windows-server-2019"
-summary = "Error message: You'll need a new app to open this windowsdefender"
-tags = ["Security", "Defender", "Server", "Windows"]
-title = "Windows Defender on Windows Server 2019"
-
-+++
+---
+author: David Sass
+categories:
+- Security
+- Defender
+- Server
+- Windows
+date: "2020-06-07T15:32:59Z"
+description: ""
+draft: false
+image: /images/2020/06/defender-error.png
+slug: defender-on-windows-server-2019
+summary: 'Error message: You''ll need a new app to open this windowsdefender'
+tags:
+- Security
+- Defender
+- Server
+- Windows
+title: Windows Defender on Windows Server 2019
+---
 
 
 You might run into this error on Windows Server 2019 when trying to open Windows Defender to change/validate its settings:

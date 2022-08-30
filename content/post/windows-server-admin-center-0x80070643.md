@@ -1,16 +1,26 @@
-+++
-author = "David Sass"
-categories = ["Windows Admin Center", "WAC", "Domain Controller", "Error", "0x80070643"]
-date = 2020-11-22T18:19:22Z
-description = ""
-draft = false
-image = "/images/2020/11/Screenshot-2020-11-22-191719.png"
-slug = "windows-server-admin-center-0x80070643"
-summary = "If you're facing Windows Admin Center 2009 - Error 0x80070643 on your machine, which might be a domain controller, I've some bad news for you. "
-tags = ["Windows Admin Center", "WAC", "Domain Controller", "Error", "0x80070643"]
-title = "Windows Admin Center - 0x80070643"
-
-+++
+---
+author: David Sass
+categories:
+- Windows Admin Center
+- WAC
+- Domain Controller
+- Error
+- "0x80070643"
+date: "2020-11-22T18:19:22Z"
+description: ""
+draft: false
+image: /images/2020/11/Screenshot-2020-11-22-191719.png
+slug: windows-server-admin-center-0x80070643
+summary: 'If you''re facing Windows Admin Center 2009 - Error 0x80070643 on your machine,
+  which might be a domain controller, I''ve some bad news for you. '
+tags:
+- Windows Admin Center
+- WAC
+- Domain Controller
+- Error
+- "0x80070643"
+title: Windows Admin Center - 0x80070643
+---
 
 
 If you're facing `Windows Admin Center 2009 - Error 0x80070643` on your machine, which might be a domain controller, I've some bad news for you.

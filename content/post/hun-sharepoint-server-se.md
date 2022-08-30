@@ -1,16 +1,23 @@
-+++
-author = "David Sass"
-categories = ["SharePoint", "SharePoint Server", "vnext", "2022"]
-date = 2021-08-01T18:05:16Z
-description = ""
-draft = false
-image = "__GHOST_URL__/content/images/2021/08/GetImage-1-.png"
-slug = "hun-sharepoint-server-se"
-summary = "Itt az új SharePoint Server Subscription Edition előzetes kiadása"
-tags = ["SharePoint", "SharePoint Server", "vnext", "2022"]
-title = "SharePoint Server új napra ébredt"
-
-+++
+---
+author: David Sass
+categories:
+- SharePoint
+- SharePoint Server
+- vnext
+- "2022"
+date: "2021-08-01T18:05:16Z"
+description: ""
+draft: false
+image: __GHOST_URL__/content/images/2021/08/GetImage-1-.png
+slug: hun-sharepoint-server-se
+summary: Itt az új SharePoint Server Subscription Edition előzetes kiadása
+tags:
+- SharePoint
+- SharePoint Server
+- vnext
+- "2022"
+title: SharePoint Server új napra ébredt
+---
 
 
 Rendhagyó módon, most magyarul posztolok mert a téma közel áll hozzám! Július 20-án a Microsoft kiadta a mostanra 20 éves SharePoint Server következő kiadásának előzetes verzióját! Az angol bejelentést [itt](https://techcommunity.microsoft.com/t5/microsoft-sharepoint-blog/a-new-day-for-sharepoint-server/ba-p/2556404) lehet elolvasni

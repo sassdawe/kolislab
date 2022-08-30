@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FeatureID on kolislab</title>
+    <link>http://kolislab.com/categories/featureid/</link>
+    <description>Recent content in FeatureID on kolislab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 04 Aug 2021 06:57:44 +0000</lastBuildDate><atom:link href="http://kolislab.com/categories/featureid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SharePoint Server Subscription Edition Preview</title>
+      <link>http://kolislab.com/post/sharepoint-server-se-preview-features/</link>
+      <pubDate>Wed, 04 Aug 2021 06:57:44 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/sharepoint-server-se-preview-features/</guid>
+      <description>SharePoint Server Subscription Edition Preview, list of features, and feature IDs.</description>
+    </item>
+    
+    <item>
+      <title>SharePoint 2019 Feature IDs</title>
+      <link>http://kolislab.com/post/sharepoint-2019-feature-ids/</link>
+      <pubDate>Sun, 18 Nov 2018 13:11:00 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/sharepoint-2019-feature-ids/</guid>
+      <description>When I work with SharePoint Server sometimes I need to validate if a FeatureID inside an error message is an Out of the Box ID in the current SharePoint version or it&amp;rsquo;s a custom one created by a Developer.
+So I just grab the FeatureID and Google it. And this is the point where this post will come handy for me and hopefully for you as well in the future.</description>
+    </item>
+    
+  </channel>
+</rss>

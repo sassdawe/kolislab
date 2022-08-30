@@ -1,16 +1,23 @@
-+++
-author = "David Sass"
-categories = ["PowerShell", "JSON", "ConvertFrom-Json", "Get-Content"]
-date = 2020-02-27T21:44:55Z
-description = ""
-draft = false
-image = "/images/2020/03/Annotation-2020-03-01-191825.png"
-slug = "powershell-vs-large-json-file"
-summary = "How to process a large json file and get its content out with PowerShell"
-tags = ["PowerShell", "JSON", "ConvertFrom-Json", "Get-Content"]
-title = "PowerShell vs a really huge JSON file"
-
-+++
+---
+author: David Sass
+categories:
+- PowerShell
+- JSON
+- ConvertFrom-Json
+- Get-Content
+date: "2020-02-27T21:44:55Z"
+description: ""
+draft: false
+image: /images/2020/03/Annotation-2020-03-01-191825.png
+slug: powershell-vs-large-json-file
+summary: How to process a large json file and get its content out with PowerShell
+tags:
+- PowerShell
+- JSON
+- ConvertFrom-Json
+- Get-Content
+title: PowerShell vs a really huge JSON file
+---
 
 
 I had to face a log file in a JSON format, which managed to grow over 700MB with 1 million plus entries in it, and my regular code wasn't able to process it any more. So I was in trouble.

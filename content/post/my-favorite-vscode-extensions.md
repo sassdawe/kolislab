@@ -1,15 +1,20 @@
-+++
-author = "David Sass"
-categories = ["PowerShell", "VSCode", "Extensions"]
-date = 2018-10-25T11:05:00Z
-description = ""
-draft = false
-image = "/images/2018/12/opengraph-home.png"
-slug = "my-favorite-vscode-extensions"
-tags = ["PowerShell", "VSCode", "Extensions"]
-title = "My favorite VSCode Extensions (updated)"
-
-+++
+---
+author: David Sass
+categories:
+- PowerShell
+- VSCode
+- Extensions
+date: "2018-10-25T11:05:00Z"
+description: ""
+draft: false
+image: /images/2018/12/opengraph-home.png
+slug: my-favorite-vscode-extensions
+tags:
+- PowerShell
+- VSCode
+- Extensions
+title: My favorite VSCode Extensions (updated)
+---
 
 
 I'm using **Visual Studio Code** as my #1 editor for my **#PowerShell** scripts and modules and these are my favorite extensions what I use every day.

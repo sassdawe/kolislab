@@ -1,14 +1,19 @@
-+++
-author = "David Sass"
-categories = ["Azure", "AzureAD", "Office365"]
-date = 2019-05-11T18:20:00Z
-description = ""
-draft = false
-slug = "azops-pro-tip-1"
-tags = ["Azure", "AzureAD", "Office365"]
-title = "Running Azure AD Pro Tip #1"
-
-+++
+---
+author: David Sass
+categories:
+- Azure
+- AzureAD
+- Office365
+date: "2019-05-11T18:20:00Z"
+description: ""
+draft: false
+slug: azops-pro-tip-1
+tags:
+- Azure
+- AzureAD
+- Office365
+title: 'Running Azure AD Pro Tip #1'
+---
 
 
 > Set up your system in a way which will allow you to receive incoming emails.

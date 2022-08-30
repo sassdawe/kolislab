@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microsoft Cloud on kolislab</title>
+    <link>http://kolislab.com/categories/microsoft-cloud/</link>
+    <description>Recent content in Microsoft Cloud on kolislab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 Feb 2019 22:24:52 +0000</lastBuildDate><atom:link href="http://kolislab.com/categories/microsoft-cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Azure Compliance Manager</title>
+      <link>http://kolislab.com/post/msft-compliance-manager/</link>
+      <pubDate>Sun, 03 Feb 2019 22:24:52 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/msft-compliance-manager/</guid>
+      <description>As you probably know Microsoft has a Service Trust Portal from where you can get the #Compliance related information for all Microsoft cloud cervices.
+You can even download the Security and Compliance Blueprints
+Compliance Manager One of the most helpful offering of the Service Trust Portal is the Compliance Manager, a workflow-based risk assessment tool in which you can get a good overview of your Compliance score which will reflect on how Microsoft understood the different regulations/certifications and the controls required to meet the requirements of these.</description>
+    </item>
+    
+  </channel>
+</rss>

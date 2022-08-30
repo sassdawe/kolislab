@@ -1,15 +1,22 @@
-+++
-author = "David Sass"
-categories = ["Compliance", "Security", "Office365", "GDPR"]
-date = 2019-01-19T20:08:17Z
-description = ""
-draft = false
-image = "/images/2019/01/images.png"
-slug = "vet-the-apps"
-tags = ["Compliance", "Security", "Office365", "GDPR"]
-title = "How do I vet the third party applications"
-
-+++
+---
+author: David Sass
+categories:
+- Compliance
+- Security
+- Office365
+- GDPR
+date: "2019-01-19T20:08:17Z"
+description: ""
+draft: false
+image: /images/2019/01/images.png
+slug: vet-the-apps
+tags:
+- Compliance
+- Security
+- Office365
+- GDPR
+title: How do I vet the third party applications
+---
 
 
 There are lots of third party software vendors focusing on applications and services to extend the functionality of Office 365. There is even a marketplace called [AppSource](https://appsource.microsoft.com/) where you can shop from these apps and services.

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microsoft Graph on kolislab</title>
+    <link>http://kolislab.com/tags/microsoft-graph/</link>
+    <description>Recent content in Microsoft Graph on kolislab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 28 Jun 2021 05:46:22 +0000</lastBuildDate><atom:link href="http://kolislab.com/tags/microsoft-graph/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Graph PowerShell SDK for Azure AD - Part 1</title>
+      <link>http://kolislab.com/post/mggraph-azuread-part1/</link>
+      <pubDate>Mon, 28 Jun 2021 05:46:22 +0000</pubDate>
+      
+      <guid>http://kolislab.com/post/mggraph-azuread-part1/</guid>
+      <description>Best practices using the Microsoft Graph PowerShell SDK to for AzureAD automation, part 1.</description>
+    </item>
+    
+  </channel>
+</rss>

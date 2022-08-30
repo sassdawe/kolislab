@@ -1,14 +1,19 @@
-+++
-author = "David Sass"
-categories = ["SharePoint", "CU", "BuildVersion"]
-date = 2018-07-01T10:33:00Z
-description = ""
-draft = false
-slug = "sharepoint-2013-may-2018-cu"
-tags = ["SharePoint", "CU", "BuildVersion"]
-title = "SharePoint 2013 - May 2018 CU"
-
-+++
+---
+author: David Sass
+categories:
+- SharePoint
+- CU
+- BuildVersion
+date: "2018-07-01T10:33:00Z"
+description: ""
+draft: false
+slug: sharepoint-2013-may-2018-cu
+tags:
+- SharePoint
+- CU
+- BuildVersion
+title: SharePoint 2013 - May 2018 CU
+---
 
 
 After installing the **May 2018 CU** on my **SharePoint Server 2013** Developer box I was expecting to see the official Build Number ```15.0.5031.1001``` but I got something else as a result:
