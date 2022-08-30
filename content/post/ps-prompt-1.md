@@ -25,7 +25,4 @@ I'm using a custom prompt within PowerShell to save space inside a console and p
         " > "
     }
 ```
-![prompt-demo](/content/images/2019/01/prompt-demo.jpg)
-
-
-
+{{< figure src="/images/2019/01/prompt-demo.jpg" caption="prompt-demo" >}}
