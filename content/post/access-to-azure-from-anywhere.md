@@ -56,18 +56,18 @@ One of these new technology is part of oAuth which helps with Authentication.
 ### Authentication with Azure Cloud Shell
 When you open the Azure Cloud Shell it uses your browser's session to authenticate you seamlessly, you just have to wait a couple of seconds and you can start using it
 
-![azure-cloud-shell.png-1](/content/images/2019/02/azure-cloud-shell.png-1.jpg)
+{{< figure src="/images/2019/02/azure-cloud-shell.png-1.jpg" caption="Azure Cloud Shell" >}}
 
 The Azure Cloud Shell in the background is an Ubuntu Linux virtual machine running in Azure and it comes with the Azure CLI pre-installed as you can see it in the picture above. 
 
 ### Authentication with Azure CLI
 We have a couple of options authenticating with the Azure CLI and because of the SSO we can skip the the authentication in the browser.
 
-![az-login-h](/content/images/2019/02/az-login-h.jpg)
+{{< figure src="/images/2019/02/az-login-h.jpg" caption="az login command in Cloud Shell" >}}
 
 But from Azure CLI running on your machine you've to authenticate somehow, which is easy because using the `az login` command your browser will open where you can sign-in.
 
-![az-login](/content/images/2019/02/az-login.jpg)
+{{< figure src="/content/images/2019/02/az-login.jpg" caption="az login with browser sign-in" >}}
 
 But if you're on a device without a browser or you want to connect to a different subscription from Azure Cloud Shell you need to use device code flow option:
 `az login --use-device-code`
