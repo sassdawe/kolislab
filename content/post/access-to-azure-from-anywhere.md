@@ -67,7 +67,7 @@ We have a couple of options authenticating with the Azure CLI and because of the
 
 But from Azure CLI running on your machine you've to authenticate somehow, which is easy because using the `az login` command your browser will open where you can sign-in.
 
-{{< figure src="/content/images/2019/02/az-login.jpg" caption="az login with browser sign-in" >}}
+{{< figure src="/images/2019/02/az-login.jpg" caption="az login with browser sign-in" >}}
 
 But if you're on a device without a browser or you want to connect to a different subscription from Azure Cloud Shell you need to use device code flow option:
 `az login --use-device-code`
@@ -77,7 +77,7 @@ On devices where the interactive login process isn't available the Device Code F
 
 In the below picture try to imagine that the PowerShell console is running on a different machine where the only option to authenticate is the Device Code Flow.
 
-{{< figure src="/images/2019/02/az-login-device-code.jpg" >}}
+{{< figure src="/images/2019/02/az-login-device-code.jpg" caption="az login with device code" >}}
 
 ## Where are we going with this?
 I hope you're still here, because this is the point where this post is starting to be interesting - at least for me.
