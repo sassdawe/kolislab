@@ -36,7 +36,7 @@ I tried using it on two different machine but it only worked ones.
 
 The module uses the **Microsoft.IdentityModel.Clients.ActiveDirectory.dll** with the `3.13.40321.2200` version for comparation the **AzureAD** PowerShell module is using the `3.19.50615.2102` version.
 
-![Installing WhiteboardAdmin PowerShell module](/content/images/2019/01/2018-07-08.png)
+{{< figure src="/images/2019/01/2018-07-08.png" caption="Installing WhiteboardAdmin PowerShell module" >}}
 
 
 
