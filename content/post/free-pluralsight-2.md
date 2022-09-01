@@ -15,8 +15,8 @@ tags:
 title: 3 months free Pluralsight
 ---
 
+{{< figure src="/images/2019/01/pluralsight-benefits.png" caption="Pluralsight benefits" >}}
 
-![Benefits](/content/images/2019/01/pluralsight-benefits.png)
 As you might all know. **Microsoft** has a program to help the developers to kick-start their Cloud journey. This program is called **[Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/)**.
 
 With this program you can have access to some really useful resources. Let me give you some examples:
@@ -30,7 +30,8 @@ With this program you can have access to some really useful resources. Let me gi
 It's highly encouraged to register and activate these learning benefits.
 
 *My personal recommendation is to start with the Pluralsight subscription and later when you activate your access for LinkedIn Learning you can update your profile with the completed courses.*
-![LinkedIn-Learning](/content/images/2019/01/linkedin-benefits.png)
+
+{{< figure src="/images/2019/01/linkedin-benefits.png" caption="LinkedIn Learning benefits" >}}
 
 
 
