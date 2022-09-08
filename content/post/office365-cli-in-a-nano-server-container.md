@@ -56,7 +56,7 @@ docker run -i -t --name nano microsoft/powershell
 docker start nano
 docker exec -i -t nano pwsh
 ```
-![pwsh 6.o](/content/images/2019/01/2018-06-06--5--1.png)
+{{< figure src="/images/2019/01/2018-06-06--5--1.png" caption="pwsh 6.o" >}}
 Trust me this is a Nano Server 2016
 
 ###### Install Chocolatey
@@ -74,7 +74,7 @@ You will need to consent during the installation, just hit ```y```
 choco install nodejs.install
 choco install git.install
 ```
-![Installing Git and Node.js](/content/images/2019/01/2018-06-06--4-.png)
+{{< figure src="/images/2019/01/2018-06-06--4-.png" caption="Installing Git and Node.js" >}}
 
 ###### Restart the container
 Because we haven't created + started + connected just created + connected to the container when we exit - by typing in ```exit``` - the container will automatically stop. So we just need to start it again and connect to it.
@@ -94,7 +94,7 @@ After it was successfully installed you start using the CLI
 ```PowerShell
 office365
 ```
-![Office365-CLI in action](/content/images/2019/01/2018-06-06--6-.png)
+{{< figure src="/images/2019/01/2018-06-06--6-.png" caption="Office365-CLI in action" >}}
 
 ##### Final thoughts
 If you find a bug in the CLI please report it on GitHub.
