@@ -13,8 +13,8 @@ pygmentscodefencesguesssyntax = true
 #disqusShortname = "kolislab"
 
 [params]
-  author = "David Sass"
-  info = "Badass Miracle Worker / Shadow Architect"
+  author = "David Sass (He/him/his/Skills)"
+  info = "Speaker | Legend | SRE | MCT | Shadow Architect | Badass Miracle Worker"
   description = "David Sass' professional blog"
   keywords = "blog,developer,architect,sassdawe"
   avatarurl = "images/avatar.jpg"
