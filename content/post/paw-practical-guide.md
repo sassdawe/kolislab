@@ -26,13 +26,16 @@ title: Practical guide to manage the PAW machines
 ## Where we are
 
 We already have some quality materials - like the [Microsoft Cybersecurity Reference Architecture](https://gallery.technet.microsoft.com/Cybersecurity-Reference-883fb54c) - about the security best practices of the Azure Cloud including possibly everything related to *Cybersecurity* but I feel that something is missing and I'll tell you why in a moment.
-![_ReferenceArch](/content/images/2019/05/_ReferenceArch.jpg)
-If you take a closer look at the reference material you'll see a <font style="color:red">red bar</font> titled: `Privileged Admin Workstations (PAWs)` and in the right side of that bar you'll see *ESAE Admin Forest* which is described here [ESAE Administrative Forest Design Approach](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#esae-administrative-forest-design-approach) 
+
+{{< figure src="/images/2019/05/_ReferenceArch.jpg" caption="Reference Architecture" >}}
+
+If you take a closer look at the reference material you'll see a `red bar` with the text: `Privileged Admin Workstations (PAWs)` and in the right side of that bar you'll see *ESAE Admin Forest* which is described here [ESAE Administrative Forest Design Approach](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#esae-administrative-forest-design-approach)
 
 > ESAE stands for **Enhanced Security Administrative Environment**
 
 Stop for a moment and think about why would we need a dedicated admin forest to manage the PAW boxes? The answer is in the [Active Directory administrative tier model](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) which is described at the top of the article.
-![paw_rm_fig4](/content/images/2019/05/paw_rm_fig4.jpg)
+
+{{< figure src="/images/2019/05/paw_rm_fig4.jpg" caption="paw_rm_fig4" >}}
 
 ## The challenge
 
@@ -65,6 +68,3 @@ Not everything works together nicely with the Red Cloud approach, based on my ex
 We wanted to have the ability to manage the PAWs from a different Tenant and not from the Production environment where the productivity devices are located, and we achieved this. We can logon to the PAW boxes and access the Production AAD using our Red Cloud IDs and leverage PIM to elevate our access level and manage the Tenant as we see fit.
 
 In the other way around, the Device Administrators of the Production Tenant cannot control the PAW boxes and we'll be protected in case an attacker manages to breach any of our device administrators of the Production Tenant.
-
-
-
