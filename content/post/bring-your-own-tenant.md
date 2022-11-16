@@ -19,6 +19,3 @@ One of the benefits of BYOT is that you can say things like this:
 > It works in my tenant ¯\_(ツ)_/¯
 
 On a more serious note: [this is how you can get a personal Developer tenant](https://docs.microsoft.com/en-us/office/developer-program/microsoft-365-developer-program) for your sandboxing/developer needs. **Have fun!**
-
-
-

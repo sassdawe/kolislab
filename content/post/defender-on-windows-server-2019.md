@@ -19,11 +19,10 @@ You might run into this error on Windows Server 2019 when trying to open Windows
 
 When this happens just execute the following line in an elevated PowerShell console
 
-```
+```PowerShell
 Add-AppxPackage -Register -DisableDevelopmentMode "C:\Windows\SystemApps\Microsoft.Windows.SecHealthUI_cw5n1h2txyewy\AppXManifest.xml"
 ```
 
 And the results (I need this on two of my server in my Lab):
 
 {{< figure src="/images/2020/06/image.png" caption="Windows Defender working on Windows Server 2019" >}}
-

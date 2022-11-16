@@ -23,6 +23,3 @@ The reason behind this blog was nothing more most to create a publishing platfor
 
 You might wonder what *Kolis* means. This is a Hungarian word and it means someone who lives or lived in a dormitory. Probably the English word is *Dormer*.
 I was a Network Administrator in the same Dormitory where I lived during my studies.
-
-
-

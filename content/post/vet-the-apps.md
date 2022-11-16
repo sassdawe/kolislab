@@ -27,9 +27,11 @@ And a different but still Outlook Add-in:
 ![add-in-permissions-2](/content/images/2019/01/add-in-permissions-2.png)
 
 ### This is how I vet the applications
+
 When I'm considering an application I want to try or use, I consider multiple things.
 
 #### What do I know about the Creator of the app?
+
 - How old is the company?
 - How big or small the company? 
 - Did they have a Security Breach before? How long ago?
@@ -37,10 +39,12 @@ When I'm considering an application I want to try or use, I consider multiple th
 - Is the community talking about them or their Apps?
 
 #### What does the App do?
+
 - Does the App require more permissions then necessary to do its job?
 - How can someone misuse the required permissions? (*What can happen if the Vendor is breached?*)
 
 #### How the legal stuff looks like?
+
 - Will my data be stored on the Vendor's servers?
 - In which country they host their service?
 - Was the App or the Vendor certified by anyone?
@@ -48,13 +52,12 @@ When I'm considering an application I want to try or use, I consider multiple th
 
 {{< figure src="/images/2019/01/Cloud-App-Sec.png" caption="Office 365 Cloud App Security" >}}
 
-#### What is my overall impression? 
+#### What is my overall impression?
+
 After knowing the size of the company, their history, their legal and the publicly available information about their security stack... for me the key is **what my gut tells me?**
 
-I know my data which is stored in my Office 365 Tenant, I know what value I'm expecting to get from the App or Service. At the end everything comes down to **Trust**. 
+I know my data which is stored in my Office 365 Tenant, I know what value I'm expecting to get from the App or Service. At the end everything comes down to **Trust**.
 
 ### Difference between Companies and me
+
 Probably the biggest difference between any Company and me is that I'm only responsible for  my Data and my Personal Information but the Companies have employees and usually stakeholders as well and the Companies are responsible for their proprietary information  and their employees Personal Information and in the EU we have #GDPR.
-
-
-

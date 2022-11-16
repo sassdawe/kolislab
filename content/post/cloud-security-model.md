@@ -19,4 +19,3 @@ After seeing that some of us - if not most of us - is still able to mess up the 
 The yellow items are my addition, and they show where most of the challenges are located. For a "capability team" which never had to deal with virtual networks and access management of the resources before the cloud era, I believe these are the parts of the cloud where most of the learning is needed, and could have an epic failure.
 
 One example cloud be a **Storage account**, do you allow management portal access to your storage account to all of your people to read the access keys, and configuration? Do you allow unrestricted network access to your Storage account from the internet? I hope both of the answers are "no", because if anyone can get to the access keys and go home to download your company information from your storage account and do all of this without any audit trails you my friend have a problem.
-
