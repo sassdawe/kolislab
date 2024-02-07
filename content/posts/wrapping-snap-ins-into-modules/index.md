@@ -1,14 +1,26 @@
 +++
 author = "David Sass"
-categories = ["Windows PowerShell", "PowerShell", "Module", "Snap-in", "video"]
-date = 2021-08-07T12:04:00Z
+categories = [
+  "Windows PowerShell",
+  "PowerShell",
+  "Module",
+  "Snap-in",
+  "video"
+]
+date = 2021-08-07T12:04:00.000Z
 description = ""
 draft = false
 slug = "wrapping-snap-ins-into-modules"
 summary = "Windows PowerShell snap-ins wrapped into modules will give us module auto-loading for the snap-ins."
-tags = ["Windows PowerShell", "PowerShell", "Module", "Snap-in", "video"]
+tags = [
+  "Windows PowerShell",
+  "PowerShell",
+  "Module",
+  "Snap-in",
+  "video"
+]
 title = "Wrapping snap-ins into modules"
-
+type = "default"
 +++
 
 
@@ -29,7 +41,7 @@ Now I'm going to stop typing, so the video below can tell you everything.
 Enjoy!
 
 
-<center><iframe src="https://player.vimeo.com/video/584223062" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></center>
+
 
 <p><a href="https://vimeo.com/584223062">Wrapping snap-ins into Modules</a> from <a href="https://vimeo.com/sassdawe">SassDawe</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 

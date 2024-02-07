@@ -1,15 +1,15 @@
 +++
 author = "David Sass"
-categories = ["Azure", "Azure CLI", "Pengwin", "WSL", "WSL2", "How to"]
-date = 2020-04-29T06:32:36Z
+categories = [ "Azure", "Azure CLI", "Pengwin", "WSL", "WSL2", "How to" ]
+date = 2020-04-29T06:32:36.000Z
 description = ""
 draft = false
 image = "/images/2020/04/Annotation-2020-04-26-202912.png"
 slug = "install-azure-cli-on-pengwin-inside-wsl2"
 summary = "Steps to install Azure CLI on Pengwin inside WSL2"
-tags = ["Azure", "Azure CLI", "Pengwin", "WSL", "WSL2", "How to"]
+tags = [ "Azure", "Azure CLI", "Pengwin", "WSL", "WSL2", "How to" ]
 title = "Install Azure CLI on Pengwin inside WSL2"
-
+type = "default"
 +++
 
 
