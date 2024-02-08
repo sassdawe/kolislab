@@ -4,7 +4,7 @@ categories = ["MSDN", "Archive", "Back up"]
 date = 2019-04-12T06:34:00Z
 description = ""
 draft = false
-image = "/images/2019/04/msdn-blogs-gone-2.jpg"
+image = "msdn-blogs-gone-2.jpg"
 slug = "msdn-blogs-are-gone"
 tags = ["MSDN", "Archive", "Back up"]
 title = "MSDN blogs are back (UPDATED)"
@@ -14,7 +14,7 @@ title = "MSDN blogs are back (UPDATED)"
 
 > Microsoft has started to delete the blogs from MSDN. **[UPDATE]** 4/17/2019: Microsoft has restored the previously deactivated blogs. I suggest to save everything you find useful into OneNote and keep them forever!
 
-{{< figure src="/images/2019/04/image-1.png" caption="Note from Twitter" >}}
+![Note from Twitter](image-1.png)
 
 **ZDNET** wrote an article about the planned _clean-up_ the back in November of 2018: [https://www.zdnet.com/article/as-microsoft-moves-more-blogs-off-its-msdn-and-technet-sites-heres-how-to-stay-current/](https://www.zdnet.com/article/as-microsoft-moves-more-blogs-off-its-msdn-and-technet-sites-heres-how-to-stay-current/)
 
@@ -30,7 +30,7 @@ And some will not make it 😥
 
 As Ned mentioned in his post on twitter (in the picture above with the red mark around it), we can use the [Internet Archive](https://archive.org/web/) to access the deleted blogs and articles.
 
-{{< figure src="/images/2019/04/image-2.png" caption="<a href='https://archive.org/web/'>https://archive.org/web/</a>" >}}
+![<a href='https://archive.org/web/'>https://archive.org/web/</a>](image-2.png)
 
 Actually, I'm in a process to export some of the blog posts using the [**OneNote Web Clipper**](https://chrome.google.com/webstore/detail/onenote-web-clipper/gojbdfnpnhogfdgjbigejoaolejmgdhk?hl=en) Chrome extension to clip the articles and send them into my dedicated **OneNote** notebook.
 

@@ -12,7 +12,7 @@ title = "SharePoint 2013 - May 2018 CU"
 
 
 After installing the **May 2018 CU** on my **SharePoint Server 2013** Developer box I was expecting to see the official Build Number ```15.0.5031.1001``` but I got something else as a result:
-![Build Version with PowerShell](/content/images/2019/01/May-2018-CU-PoSH-1.png)
+![Build Version with PowerShell](May-2018-CU-PoSH-1.png)
 
 Weird. ```15.0.5023.1000``` is the Build Number of the **April 2018 CU**.
 
@@ -23,13 +23,13 @@ I was thinking
   - Lets check the Central Admin
   - The same version number:
 
-![Build Version on the Central Admin](/content/images/2019/01/May-2018-CU-CenAdmin.png)
+![Build Version on the Central Admin](May-2018-CU-CenAdmin.png)
 
 OK. I have seen some weird stuff with SharePoint during these last years.
 
 Finally I have found the correct Build Numbers on the *Chech product and patch installation status* page:
 
-![Patch Status page](/content/images/2019/01/May-2018-CU-PatchStatus.png)
+![Patch Status page](May-2018-CU-PatchStatus.png)
 
 
 

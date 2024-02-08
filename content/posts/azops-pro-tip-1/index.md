@@ -17,7 +17,7 @@ title = "Running Azure AD Pro Tip #1"
 
 Your users might be invited into a different Tenant to access resources. To accept these invitations - which will arrive in email form - you've to receive these invitation emails.
 
-{{< figure src="/images/2019/05/aad-invite.jpg" caption="Azure AD - New guest user" >}}
+![Azure AD - New guest user](aad-invite.jpg)
 
 ## Use case #2: Official communications
 

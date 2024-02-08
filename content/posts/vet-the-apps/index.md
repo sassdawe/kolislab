@@ -4,7 +4,7 @@ categories = ["Compliance", "Security", "Office365", "GDPR"]
 date = 2019-01-19T20:08:17Z
 description = ""
 draft = false
-image = "/images/2019/01/images.png"
+image = "images.png"
 slug = "vet-the-apps"
 tags = ["Compliance", "Security", "Office365", "GDPR"]
 title = "How do I vet the third party applications"
@@ -14,17 +14,17 @@ title = "How do I vet the third party applications"
 
 There are lots of third party software vendors focusing on applications and services to extend the functionality of Office 365. There is even a marketplace called [AppSource](https://appsource.microsoft.com/) where you can shop from these apps and services.
 
-![AppSource](/content/images/2019/01/AppSource.png)
+![AppSource](AppSource.png)
 
 There are hundreds of applications in each category from where you just have to pick those you like and add them to **Office 365** but bare in mind that these apps will *ask for permissions* in the same way how apps are asking for permissions on your mobile device.
 
 In this example you can see an Outlook Add-in and the permissions it requires, I highlighted some of them:
 
-![add-in-permissions](/content/images/2019/01/add-in-permissions.png)
+![add-in-permissions](add-in-permissions.png)
 
 And a different but still Outlook Add-in:
 
-![add-in-permissions-2](/content/images/2019/01/add-in-permissions-2.png)
+![add-in-permissions-2](add-in-permissions-2.png)
 
 ### This is how I vet the applications
 
@@ -50,7 +50,7 @@ When I'm considering an application I want to try or use, I consider multiple th
 - Was the App or the Vendor certified by anyone?
 - What does **Office 365 Cloud App Security** tell me about the App or Service?
 
-{{< figure src="/images/2019/01/Cloud-App-Sec.png" caption="Office 365 Cloud App Security" >}}
+![Office 365 Cloud App Security](Cloud-App-Sec.png)
 
 #### What is my overall impression?
 

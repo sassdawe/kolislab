@@ -4,7 +4,7 @@ categories = ["Security", "Defender", "Server", "Windows"]
 date = 2020-06-07T15:32:59Z
 description = ""
 draft = false
-image = "/images/2020/06/defender-error.png"
+image = "defender-error.png"
 slug = "defender-on-windows-server-2019"
 summary = "Error message: You'll need a new app to open this windowsdefender"
 tags = ["Security", "Defender", "Server", "Windows"]
@@ -25,4 +25,4 @@ Add-AppxPackage -Register -DisableDevelopmentMode "C:\Windows\SystemApps\Microso
 
 And the results (I need this on two of my server in my Lab):
 
-{{< figure src="/images/2020/06/image.png" caption="Windows Defender working on Windows Server 2019" >}}
+![Windows Defender working on Windows Server 2019](image.png)

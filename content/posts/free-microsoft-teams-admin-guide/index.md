@@ -58,7 +58,7 @@ Turning on security defaults is quite easy, you just have to open the [Azure AD 
 
 > If your tenant was created on or after October 22nd, 2019, it’s possible you are experiencing the new secure-by-default behavior and already have security defaults enabled
 
-![Annotation-2020-03-08-084432](/content/images/2020/03/Annotation-2020-03-08-084432.jpg)
+![Annotation-2020-03-08-084432](Annotation-2020-03-08-084432.jpg)
 
 Next time when a user tries to sign-in they will be redirected to a page to set up  Multi-factor authentication.
 
@@ -73,7 +73,7 @@ In the rare case when there is a breach in your **#Office365** subscription **@M
 Using one of the new Global Admins you need to navigate to the [Office 365 Admin Center](https://admin.microsoft.com/AdminPortal/Home#/homepage) and from the left navigation choose  **Admin center** > **Security & Compliance**
 When you're on the [**Security & Compliance**](https://protection.office.com/?rfr=AdminCenter#/homepage) open the **Search & investigation** > **Audit log search** page and on the yellow top banner there should be a button to **Turn on Auditing**
 
-{{< figure src="/images/2018/12/SCC-Auditing-1.png" >}}
+![](SCC-Auditing-1.png)
 
 After you successfully enabled the Audit log collection it could take up to 24 hours until you can use the Search capabilities of the portal.
 

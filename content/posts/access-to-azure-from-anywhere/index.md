@@ -4,7 +4,7 @@ categories = ["Azure", "Azure CLI", "Cloud Shell", "PowerShell", "Shell", "Red T
 date = 2019-02-12T06:00:00Z
 description = ""
 draft = false
-image = "/images/2019/02/az-2.jpg"
+image = "az-2.jpg"
 slug = "access-to-azure-from-anywhere"
 tags = ["Azure", "Azure CLI", "Cloud Shell", "PowerShell", "Shell", "Red Team", "Security"]
 title = "Red Team type of Access to Azure from Anywhere"
@@ -43,18 +43,18 @@ One of these new technology is part of oAuth which helps with Authentication.
 ### Authentication with Azure Cloud Shell
 When you open the Azure Cloud Shell it uses your browser's session to authenticate you seamlessly, you just have to wait a couple of seconds and you can start using it
 
-![azure-cloud-shell.png-1](/content/images/2019/02/azure-cloud-shell.png-1.jpg)
+![azure-cloud-shell.png-1](azure-cloud-shell.png-1.jpg)
 
 The Azure Cloud Shell in the background is an Ubuntu Linux virtual machine running in Azure and it comes with the Azure CLI pre-installed as you can see it in the picture above. 
 
 ### Authentication with Azure CLI
 We have a couple of options authenticating with the Azure CLI and because of the SSO we can skip the the authentication in the browser.
 
-![az-login-h](/content/images/2019/02/az-login-h.jpg)
+![az-login-h](az-login-h.jpg)
 
 But from Azure CLI running on your machine you've to authenticate somehow, which is easy because using the `az login` command your browser will open where you can sign-in.
 
-![az-login](/content/images/2019/02/az-login.jpg)
+![az-login](az-login.jpg)
 
 But if you're on a device without a browser or you want to connect to a different subscription from Azure Cloud Shell you need to use device code flow option:
 `az login --use-device-code`
@@ -64,7 +64,7 @@ On devices where the interactive login process isn't available the Device Code F
 
 In the below picture try to imagine that the PowerShell console is running on a different machine where the only option to authenticate is the Device Code Flow.
 
-{{< figure src="/images/2019/02/az-login-device-code.jpg" >}}
+![](az-login-device-code.jpg)
 
 ## Where are we going with this?
 I hope you're still here, because this is the point where this post is starting to be interesting - at least for me.

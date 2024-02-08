@@ -32,7 +32,7 @@ Uninstall-WindowsFeature -Name "Desktop-Experience","Server-GUI-Shell" -Restart
 ```
 
 And after the reboot I verified my Farm is still there:
-![SharePoint Server Core](/content/images/2019/01/sharepoint-server-core.png)
+![SharePoint Server Core](sharepoint-server-core.png)
 
 I will be honest, I will not keep this machine and use it because I need the free space for my next project.
 

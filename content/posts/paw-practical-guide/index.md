@@ -4,7 +4,7 @@ categories = ["Azure", "AzureAD", "Security", "PAW", "Admin", "MFA"]
 date = 2019-05-26T14:22:22Z
 description = ""
 draft = false
-image = "/images/2019/05/__DEFCON-1.jpg"
+image = "__DEFCON-1.jpg"
 slug = "paw-practical-guide"
 tags = ["Azure", "AzureAD", "Security", "PAW", "Admin", "MFA"]
 title = "Practical guide to manage the PAW machines"
@@ -15,13 +15,13 @@ title = "Practical guide to manage the PAW machines"
 ## Where we are
 
 We already have some quality materials - like the [Microsoft Cybersecurity Reference Architecture](https://gallery.technet.microsoft.com/Cybersecurity-Reference-883fb54c) - about the security best practices of the Azure Cloud including possibly everything related to *Cybersecurity* but I feel that something is missing and I'll tell you why in a moment.
-![_ReferenceArch](/content/images/2019/05/_ReferenceArch.jpg)
+![_ReferenceArch](_ReferenceArch.jpg)
 If you take a closer look at the reference material you'll see a <font style="color:red">red bar</font> titled: `Privileged Admin Workstations (PAWs)` and in the right side of that bar you'll see *ESAE Admin Forest* which is described here [ESAE Administrative Forest Design Approach](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#esae-administrative-forest-design-approach) 
 
 > ESAE stands for **Enhanced Security Administrative Environment**
 
 Stop for a moment and think about why would we need a dedicated admin forest to manage the PAW boxes? The answer is in the [Active Directory administrative tier model](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) which is described at the top of the article.
-![paw_rm_fig4](/content/images/2019/05/paw_rm_fig4.jpg)
+![paw_rm_fig4](paw_rm_fig4.jpg)
 
 ## The challenge
 

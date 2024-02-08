@@ -4,7 +4,7 @@ categories = ["PowerShell", "Whiteboard", "Admin"]
 date = 2018-06-27T20:45:00Z
 description = ""
 draft = false
-image = "/images/2019/01/2018-07-05.png"
+image = "2018-07-05.png"
 slug = "whiteboard-powershell"
 tags = ["PowerShell", "Whiteboard", "Admin"]
 title = "Whiteboard PowerShell"
@@ -31,7 +31,7 @@ I tried using it on two different machine but it only worked ones.
 
 The module uses the **Microsoft.IdentityModel.Clients.ActiveDirectory.dll** with the `3.13.40321.2200` version for comparation the **AzureAD** PowerShell module is using the `3.19.50615.2102` version.
 
-![Installing WhiteboardAdmin PowerShell module](/content/images/2019/01/2018-07-08.png)
+![Installing WhiteboardAdmin PowerShell module](2018-07-08.png)
 
 
 
