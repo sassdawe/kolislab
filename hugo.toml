@@ -14,7 +14,7 @@ pygmentscodefencesguesssyntax = true
 
 [params]
   author = "David Sass"
-  info = "Dreamer | Speaker | Legend | SRE | MCT | Shadow Architect"
+  info = "Microsoft PowerShell MVP | Architect | Speaker | SRE | MCT | Dreamer | Legend"
   description = "David Sass' professional blog"
   keywords = "blog,developer,architect,sassdawe"
   avatarurl = "images/avatar.jpg"
@@ -61,6 +61,6 @@ pygmentscodefencesguesssyntax = true
   weight = 2
   url = "about"
 [[menu.main]]
-  name = "By me a coffee"
+  name = "Buy me a coffee"
   weight = 3
   url = "http://www.buymeacoffee.com/sassdawe"
