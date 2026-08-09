@@ -14,7 +14,7 @@ pygmentscodefencesguesssyntax = true
 
 [params]
   author = "David Sass"
-  info = "Microsoft PowerShell MVP | Architect | Speaker | SRE | MCT | Dreamer | Legend"
+  info = "Microsoft PowerShell MVP, Architect, Speaker, Engineer, Trainer, Dreamer, Legend"
   description = "David Sass' professional blog"
   keywords = "blog,developer,architect,sassdawe"
   avatarurl = "images/avatar.jpg"
